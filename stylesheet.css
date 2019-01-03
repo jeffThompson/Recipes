@@ -1,0 +1,188 @@
+@charset "UTF-8";
+
+/* CSS RESET */
+/* http://meyerweb.com/eric/tools/css/reset */
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+
+/* keep sizes the same, even with borders */
+*, *:after, *:before {
+	-webkit-box-sizing:	border-box;
+ 	-moz-box-sizing: 	border-box;
+ 	box-sizing: 		border-box;
+}
+
+/* basics */
+html, body {
+	background-color: 	white;
+
+	font-family: 		'Fira Sans', sans-serif;
+	font-size: 			18px;
+}
+strong {
+	font-weight: 		700;
+}
+em {
+	font-style: 		italic;
+}
+
+/* section dividers */
+section {
+	margin-bottom: 		2em;
+}
+
+/* recipe title */
+h1 {
+	font-size: 			2.5em;
+	font-weight: 		900;
+	text-transform: 	uppercase;
+}
+
+/* section headers */
+h2 {
+	font-size: 			1.5em;
+	font-weight: 		700;
+	text-transform: 	uppercase;
+
+	margin-bottom: 		0.6em;
+}
+
+/* all other text */
+p, ul, ol {
+	font-size: 			1em;
+	line-height: 		1.3em;
+}
+p {
+	font-style: 		italic;
+}
+p::first-letter, #ingredients li::first-letter, #steps li::first-letter, #notes li::first-letter {
+	text-transform: 	uppercase;
+}
+#ingredients p, #steps p, #notes p, #basedon p {
+	font-weight: 		700;
+	margin: 			1.1em 0 0.6em 0;
+}
+#toc li {
+	text-transform: 	capitalize;
+}
+
+/* list styling */
+ol {
+	list-style: 		decimal outside;
+}
+ol li {
+	margin-left: 		1.05em;
+}
+
+#notes ul, #help ul, #basedon ul, #toc ul {
+	list-style: 		square outside;
+}
+#notes ul li, #help ul li, #basedon ul li, #toc ul li {
+	margin-left: 		1em;
+}
+#notes ul li {
+	margin-bottom: 		0.4em;
+}
+
+#toc ul {
+	margin-top: 		1em;
+}
+#toc li {
+	margin-bottom:					1em;
+	
+	-webkit-column-break-inside:	avoid;				/* avoid splitting a single item into cols */
+	page-break-inside:				avoid;
+	break-inside:					avoid-column;
+}
+
+/* links */
+a, a:link, a:visited {
+	color: 			 	black;
+	text-decoration: 	none;
+	background-color:	transparent;
+}
+a:active, a:hover {
+	color:				black;
+	background-color:	rgba(255,255,0, 0.5);
+}
+
+/* specific sections/objects */
+#wrapper {
+	width:     			90%;
+	max-width: 			700px;
+	margin:    			0.3em auto 4em auto;
+}
+.paren {
+	color: 				rgb(170,170,170);
+	font-style:			italic;
+}
+#back {
+	margin-bottom: 		0.6em;
+	font-style: 		normal;
+}
+#title {
+	text-align: 		center;
+	padding-bottom: 	1.3em;
+	border-bottom: 		1px solid gray;
+}
+#footer {
+	color: 				rgb(170,170,170);	
+}
+#footer a, #footer a:link, #footer a:visited {
+	color:				rgb(150,150,150);
+}
+.externalArrow {
+	height: 			0.8em;
+	margin: 			0 0 -0.08em 0.1em;
+}
+.highlight {
+	background-color: 	rgba(255,255,0, 0.5);
+}
+hr {
+	clear: 				both;
+	border:				none;
+	border-top:  		1px solid gray;
+}
+
+/* larger screen: ingredients and steps as two columns */
+@media screen and (min-width: 820px) {
+	#wrapper {
+		margin-top:	 	2em;
+	}
+
+	h1 {
+		font-size:		3em;
+	}
+	h2 {
+		font-size:		1.15em;
+	}
+	
+	#toc ul, #help ul {
+		column-count: 		2;
+		-webkit-column-gap:	4em;
+		-moz-column-gap:    4em;
+		column-gap: 		4em;
+	}
+
+	#back {
+		margin-bottom: 	1.3em;
+	}
+	#title {
+		text-align: 	left;
+		padding-bottom: 0;
+		border-bottom:  none;
+	}
+	#ingredients, #steps {
+		float: 			left;
+	}
+	#ingredients {
+		width: 			33%;
+		padding-right: 	2em;
+	}
+	#ingredients li {
+		margin-bottom: 	0.4em;
+	}
+	#steps {
+		width: 			66%;
+	}
+}
+
