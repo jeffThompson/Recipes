@@ -30,6 +30,7 @@ for the vegetables:
 
 for serving:  
 * sliced cucumber  
+* sliced Thai chiles  
 * sticky rice  
 * lettuce leaves (optional, in place of rice)  
 
@@ -38,11 +39,11 @@ for serving:
 make toasted rice powder:  
 1. heat wok or skillet over high heat  
 2. add raw rice and cook until rice is toasted and dark brown (3-5 mins)  
-3. remove from wok and cool, grind into a coarse powder in a mortar or blender  
+3. remove from wok and cool, grind into a coarse powder in a mortar or food processor  
 
 make the galangal paste:  
 1. in a dry cast iron skillet, roast the garlic, galangal, and shallots until fragrant and soft  
-2. (galangal should take about 5 minutes, garlic and shallots might take 15-20 mins)  
+2. (galangal should look dry  on both sides but don't let it burn, should take about 5 minutes)  
 3. pound in a mortar and pestle (or grind in a food processor) until a smooth, "lightly fibrous" paste forms  
 
 make salad:  
@@ -55,7 +56,10 @@ make salad:
 7. plate and add remaining herbs and a pinch of rice powder  
 
 serve:  
-1. spoon onto service plate and surround with cucumber and lettuce (if using)  
+1. spoon onto service plate and surround with cucumber, chiles, and lettuce (if using)  
+
+## notes  
+* Definitely prep all the herbs ahead of time into bowls (one for fish sauce mix, one for herbs for cooking, another for garnish) since this cooks super fast  
 
 ## based on  
 * The great *Pok Pok* book  
