@@ -179,7 +179,9 @@
 					break;
 					default: return;
 				}
-				e.preventDefault();		// ignore normal L/R behavior
+				// e.preventDefault();		// ignore normal L/R behavior
+											// (probably don't want to do this, since
+											//  we want to use L/R for the back button, etc)
 			});
 		});
 	</script>
