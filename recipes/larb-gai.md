@@ -50,16 +50,13 @@ make salad:
 1. heat wok or skillet over high heat, pour in oil  
 2. add chicken and 1 tbsp galangal paste, stirring constantly    
 3. cook until nearly cooked through (not about browning just getting cooked)  
-4. remove wok from heat, add fish sauce mixture  
-5. return wok to high heat, stir and cook 2-3 minutes  
-6. add shallots, lemongrass, 1 tbsp rice powder, lime leaf, and 1 tbsp each of the herbs  
-7. plate and add remaining herbs and a pinch of rice powder  
+4. add fish sauce mixture, stir and cook 2-3 minutes until most of the liquid is absorbed  
+5. remove from heat and let sit until the chicken is warm but not hot  
+6. add shallots, lemongrass, 1 tbsp rice powder, lime leaf, and the herbs (reserving a bit for garnish)  
+7. plate and sprinkle a bit of the herbs and a generous pinch of rice powder  
 
 serve:  
-1. spoon onto service plate and surround with cucumber, chiles, and lettuce (if using)  
-
-## notes  
-* Definitely prep all the herbs ahead of time into bowls (one for fish sauce mix, one for herbs for cooking, another for garnish) since this cooks super fast  
+1. spoon onto service plate and surround with cucumber, chiles, and lettuce (if using)   
 
 ## based on  
 * The great *Pok Pok* book  
