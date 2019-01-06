@@ -115,8 +115,7 @@
 
 					// a few more bits to nicen things up...
 
-					// remove cruft from 'based on' links
-					// (comment out if you want the full urls to appear)
+					// opt: remove cruft from 'based on' links
 					if (shortenURLs) {
 						$('#basedon a').each( function() {
 							var url = $(this).text();
