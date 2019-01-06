@@ -105,6 +105,15 @@ a:active, a:hover {
 	background-color:	rgba(255,255,0, 0.5);
 }
 
+/* make sure long urls split at slashes */
+#basedon a {
+	white-space: 		pre-wrap; 		/* css-3 */
+    white-space: 		-moz-pre-wrap; 	/* mozilla, since 1999 */
+    white-space: 		-pre-wrap; 		/* opera 4-6 */
+    white-space: 		-o-pre-wrap; 	/* opera 7 */
+    word-wrap: 			break-word; 	/* ie 5.5+ */ 
+}
+
 /* specific sections/objects */
 #wrapper {
 	width:     			90%;
@@ -190,10 +199,10 @@ hr {
 /* print is not dead */
 @media print {
 	#title {
-		text-align: left !important;
+		text-align: 	left !important;
 	}
 	#back, #help {
-		display: none;
+		display: 		none;
 	}
 }
 
