@@ -24,6 +24,9 @@
 	</script>
 	<script>
 
+		// options:
+		var shortenURLs = false;
+
 		// create markdown converter
 		var md = new showdown.Converter();
 
@@ -114,11 +117,13 @@
 
 					// remove cruft from 'based on' links
 					// (comment out if you want the full urls to appear)
-					$('#basedon a').each( function() {
-						var url = $(this).text();
-						url = getDomain(url);
-						$(this).text(url);
-					});
+					if (shortenURLs) {
+						$('#basedon a').each( function() {
+							var url = $(this).text();
+							url = getDomain(url);
+							$(this).text(url);
+						});
+					}
 
 					// in the ingredients, make things in parentheses a
 					// bit lighter
