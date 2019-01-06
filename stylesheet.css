@@ -187,3 +187,15 @@ hr {
 	}
 }
 
+/* print is not dead */
+@media print {
+	#title {
+		text-align: left !important;
+	}
+	#back, #help {
+		display: none;
+	}
+}
+
+
+
