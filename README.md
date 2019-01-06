@@ -12,39 +12,42 @@ To save your place while looking up at the ingredients, click the step you're on
 ## RECIPE FORMAT  
 In order to show up properly, your recipe's Markdown file should be named with dashes in place of spaces (ex: `rice-pilaf.md` or `saag-paneer.md`) and the file should follow this format:
 
-	# Raspberry and Elderflower Gin and Tonic
-	A delicious light-red drink
+```markdown
+# Raspberry and Elderflower Gin and Tonic
+A delicious light-red drink
 
-	## ingredients
-	* 8 raspberries (frozen ok but should be thawed)  
-	* Fresh thyme (optional)  
-	* Gin  
-	* 1/2 lime  
-	* 1-2 tbsp St Germaine (or 1-2 tsp simple syrup)  
+## ingredients
+* 8 raspberries (frozen ok but should be thawed)  
+* Fresh thyme (optional)  
+* Gin  
+* 1/2 lime  
+* 1-2 tbsp St Germaine (or 1-2 tsp simple syrup)  
 
-	## steps
-	1. Muddle raspberries with 1.5 oz gin (and fresh thyme, if using)  
-	2. Add juice of half a lime  
-	3. Add 1-2 tbsp St Germaine (or 1-2 tsp simple syrup)  
-	4. Strain into glass, add ice cubes and top with tonic 
+## steps
+1. Muddle raspberries with 1.5 oz gin (and fresh thyme, if using)  
+2. Add juice of half a lime  
+3. Add 1-2 tbsp St Germaine (or 1-2 tsp simple syrup)  
+4. Strain into glass, add ice cubes and top with tonic 
 
-	## notes
-	* Replace tonic with champagne for a *French 75* mashup   
+## notes
+* Replace tonic with champagne for a *French 75* mashup   
 
-	## based on
-	* https://www.instagram.com/p/Bq3ckR8HIDE/
+## based on
+* https://www.instagram.com/p/Bq3ckR8HIDE/
+```
 
 The `Ingredients` and `Steps` sections can be split with subheaders too:
 
-	## steps
-	1. Soak urad dal for 4 hours to overnight, drain  
-	2. Grind in blender until a smooth and thick paste (add a little water if necessary)  
-	3. Put in mixing bowl and whip with hands for 2-3 minutes until fluffy  
-	4. Add spices, herbs, and salt and whip again to combine  
+```## steps
+1. Soak urad dal for 4 hours to overnight, drain  
+2. Grind in blender until a smooth and thick paste (add a little water if necessary)  
+3. Put in mixing bowl and whip with hands for 2-3 minutes until fluffy  
+4. Add spices, herbs, and salt and whip again to combine  
 
-	To fry:
-	1. Heat oil over medium/medium-high heat  
-	2. Take a bowl of water, wet hands, and form small balls  
-	3. Slide into oil and cook, flipping often, until golden  
-	4. Drain on paper towels  
+To fry:
+1. Heat oil over medium/medium-high heat  
+2. Take a bowl of water, wet hands, and form small balls  
+3. Slide into oil and cook, flipping often, until golden  
+4. Drain on paper towels  
+```
 
