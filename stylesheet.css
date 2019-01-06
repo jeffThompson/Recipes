@@ -109,13 +109,14 @@ a:active, a:hover {
 #wrapper {
 	width:     			90%;
 	max-width: 			700px;
-	margin:    			0.3em auto 4em auto;
+	margin:    			1em auto 4em auto;
 }
 .paren {
 	color: 				rgb(170,170,170);
 	font-style:			italic;
 }
 #back {
+	margin-top: 		-0.6em;
 	margin-bottom: 		0.6em;
 	font-style: 		normal;
 }

@@ -188,7 +188,7 @@
 </head>
 
 <body>
-	<div id="wrapper">
+	<div id="wrapper" class="recipe">
 		<p id="back"><a href="index.php">&larr;&nbsp;&nbsp;&nbsp;</a></p>
 		<section id="title"></section>
 		<section id="ingredients"></section>

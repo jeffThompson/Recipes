@@ -58,7 +58,7 @@
 </head>
 
 <body>
-	<div id="wrapper">
+	<div id="wrapper" class="index">
 		<section id="toc">
 			<h1>Recipe Book</h1>
 			<ul> <!-- your recipes will go here --> </ul>
