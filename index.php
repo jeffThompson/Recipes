@@ -1,6 +1,7 @@
 <!doctype html>
 <html profile="http://www.w3.org/2005/10/profile">
 <head>
+	<title>Recipe Book</title>
 
 	<!-- basics -->
 	<meta charset="UTF-8">
