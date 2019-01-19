@@ -1,6 +1,7 @@
 <!doctype html>
 <html profile="http://www.w3.org/2005/10/profile">
 <head>
+	<title>Recipe Book</title>
 
 	<!-- basics -->
 	<meta charset="UTF-8">
@@ -100,6 +101,11 @@
 						if (!foundTitle) {
 							id = 'title';
 							foundTitle = true;
+
+							// change page title too
+							var elems = $(section);
+							var pageTitle = elems[0].innerHTML + ' | Recipe Book';
+							$(document).prop('title', pageTitle);
 						}
 						// for all others, get id from regex match
 						else {
