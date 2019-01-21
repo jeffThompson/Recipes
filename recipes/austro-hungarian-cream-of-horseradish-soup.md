@@ -9,7 +9,7 @@
 * 1 cup chicken stock (or more veg stock)  
 * 1 cup heavy whipping cream  
 * 1 large egg yolk  
-* 2 tbs dry white wine  
+* 2 tbsp dry white wine  
 * 1.5 oz horseradish, freshly grated on a zester  
 * black pepper  
 * salt to taste  
