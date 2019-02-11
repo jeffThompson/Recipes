@@ -6,7 +6,7 @@
 * 4 cloves garlic, chopped  
 * 2 eggs  
 * 4-6 stalks Chinese broccoli, stems thinly sliced, leaves roughly chopped  
-* 1 lb fresh rice noodles (see note, or [make your own](https://hot-thai-kitchen.com/fresh-rice-noodles))  
+* 1 lb fresh rice noodles (see note)  
 * 4 tsp sugar  
 * ground white pepper, to taste  
 
@@ -26,7 +26,7 @@ optional: *prik nam som* (chili vinegar)
 * 5% distilled vinegar  
 
 ## steps  
-1. if using meat: stir the meat and marination ingredients together, let sit  
+1. if using meat: stir the meat and marinade ingredients together, let sit  
 2. combine all sauce ingredients in a small bowl  
 3. if making, add chiles to vinegar in small bowl, let sit  
 4. heat 1 tbsp oil over medium-high heat, add protein and cook until done, move to a bowl and wipe pan clean  
@@ -42,6 +42,7 @@ optional: *prik nam som* (chili vinegar)
 
 ## notes  
 * if noodles are in fridge, warm until hot and softened, cut as needed  
+* or make your own: https://hot-thai-kitchen.com/fresh-rice-noodles  
 * "Pad" means stir fry, "see ew" means soy sauce... meaning the dish technically means "stir fry with soy sauce"  
 
 ## based on  
