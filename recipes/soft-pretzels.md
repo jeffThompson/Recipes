@@ -5,7 +5,7 @@
 * 1 tbsp sugar  
 * 2 tsp kosher salt  
 * 1 package active dry yeast  
-* 22-oz all-purpose flour (approx 4.5 cups)  
+* 22-oz (1-lb, 6-oz) all-purpose flour (approx 4.5 cups)  
 * 2 oz unsalted butter, melted  
 * 10 cups water  
 * 2/3 cup baking soda  
@@ -19,7 +19,7 @@ make the dough:
 1. Combine the water, sugar, and kosher salt in a large mixing bowl and sprinkle yeast on top  
 2. Let sit for 5 minutes or until the yeast begins to foam  
 3. Add the flour and melted butter and mix using your hands until well combined and pulls away from the sides of the bowl  
-4. Knead the dough until smooth and gluten is well-developed  
+4. Knead the dough until smooth and gluten is well-developed (either by hand, or in a stand mixer or bread machine)  
 5. Clean bowl, oil with vegetable oil  
 6. Return dough to the bowl, cover with plastic wrap, and let sit in a warm place for 50-55 minutes or until dough has doubled in size  
 
@@ -40,7 +40,7 @@ boil and bake:
 4. Bake until dark golden brown in color, approx 12–14 minutes  
 5. Cool on a wire rack at least 5 minutes before serving  
 
-## notes
+## notes  
 * If not enough room, making sixteen 12-inch ropes works too  
 * The baking soda water gives off messy steam – boil in a really tall pot if possible  
 

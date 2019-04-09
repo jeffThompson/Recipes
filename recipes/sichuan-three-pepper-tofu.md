@@ -4,7 +4,7 @@
 * Block of firm tofu, pressed and cut into small cubes  
 * 2.5 tbsp oil  
 * 4 long hot green peppers, de-seeded and cut into 1/2" sections  
-* 5 dried red chili peppers, whole or cut into thirds (if you like spicy)  
+* 3-5 dried red chili peppers, whole or cut into thirds (if you like spicy)  
 * 1 tbsp Sichuan peppercorns  
 * 2 tbsp garlic, chopped  
 
@@ -13,6 +13,7 @@ For the sauce:
 * 1/4 tsp ground white pepper  
 * 1 tbsp Shaoxing wine  
 * 1/2 tsp sesame oil  
+* 1 tsp cornstarch  
 * 1 tsp spicy bean paste (Chengdu Jiuanfei Pixain broad bean paste with chili oil, or Lee Kum Kee Chili Bean Sauce)  
 
 ## steps

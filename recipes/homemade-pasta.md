@@ -12,7 +12,7 @@ easy way:
 1. mix everything in a bowl, mix with hands until a shaggy dough forms  
 
 harder, but more legit way:
-1. place flour in a pile on the counter, make a small indentation in the middle  
+1. place flour in a wide pile on the counter, make a small indentation in the middle – **this must be big enough to contain all the wet ingredients or you will have a huge mess!**  
 2. crack the eggs into the indentation, add the oil and salt  
 3. stir vigorously with a fork, slowly letting bits of the flour tumble into the egg  
 4. using a bench scraper, fold the flour over the egg mix repeatedly until dough starts to form  
