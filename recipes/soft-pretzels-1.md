@@ -1,4 +1,5 @@
 # Soft Pretzels
+Variation #1, from Alton Brown  
 
 ## ingredients
 * 1.5 cups warm water (110–115º F)  

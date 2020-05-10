@@ -36,6 +36,9 @@ h1 {
 	font-weight: 		900;
 	text-transform: 	uppercase;
 }
+#mainTitle {
+	text-align:         center;
+}
 
 /* section headers */
 h2 {
@@ -45,6 +48,9 @@ h2 {
 
 	margin-bottom: 		0.6em;
 }
+#info h2 {
+	display: 			none;
+}
 
 /* all other text */
 p, ul, ol {
@@ -52,9 +58,9 @@ p, ul, ol {
 	line-height: 		1.3em;
 }
 p {
-	font-style: 		italic;
+	/*font-style: 		italic;*/
 }
-p::first-letter, #ingredients li::first-letter, #steps li::first-letter, #notes li::first-letter {
+p::first-letter, #ingredients li::first-letter, #steps li::first-letter, #notes li::first-letter, #time::first-letter, #makes::first-letter {
 	text-transform: 	uppercase;
 }
 #ingredients p, #steps p, #notes p, #basedon p {
@@ -94,7 +100,19 @@ ol li {
 	break-inside:					avoid-column;
 }
 
-/* links */
+#navigation {
+	margin-top:  0.7em;
+	line-height: 1.7em;
+	text-align:  center;
+}
+#navigation a {
+	margin-right: 1.1em;
+}
+:target {
+	background-color: rgba(255,255,0, 0.25);
+}
+
+/* links and letter list highlight */
 a, a:link, a:visited {
 	color: 			 	black;
 	text-decoration: 	none;
@@ -140,6 +158,18 @@ a:active, a:hover {
 #footer a, #footer a:link, #footer a:visited {
 	color:				rgb(150,150,150);
 }
+
+#info li {
+	margin-left: 		4em;
+	text-indent: 		-2em;
+	margin-bottom: 		0.6em;
+}
+#time, #makes {
+	display: 			inline-block;
+	width: 				2em;
+	font-weight: 		700;
+}
+
 .externalArrow {
 	height: 			0.8em;
 	margin: 			0 0 -0.08em 0.1em;

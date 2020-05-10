@@ -1,6 +1,10 @@
 # Egg Biryani
 Basically the seven-layer bean dip of Indian food
 
+## info  
+* Takes 2–3 hours to make all the components  
+* 4–6 servings, more if served with other dishes  
+
 ## ingredients
 
 for the rice:
@@ -9,16 +13,15 @@ for the rice:
 * 1 star anise  
 * 1 cinnamon stick  
 * 1/8 tsp salt  
-* 1 tsp lemon juice  
-* 1.5 cups basmati rice (preferably Kohinoor extra long grain)  
+* 2 cups basmati rice (preferably Kohinoor extra long grain)  
 
 for the fried onions:
-* 1/2 medium onion, thinly sliced  
+* 1 medium onion, thinly sliced  
 
 for frying eggs:
 * 4-5 hard-boiled eggs  
 * 1 tsp oil  
-* 1/4 tsp red chili powder  
+* 1/4 tsp red chili powder (optional)  
 * 1/8 tsp turmeric powder  
 * 1/4 tsp coriander powder  
 * 1/4 tsp biryani masala (or garam masala)  
@@ -41,7 +44,7 @@ for the gravy:
 
 gravy, part 2:
 * 1 tsp biryani masala (or garam masala)  
-* 3/4 tsp red chili powder  
+* 3/4 tsp red chili powder (optional)  
 * 3-4 green chili, slit  
 * salt to taste  
 * 1/2 cup yogurt  
@@ -55,18 +58,26 @@ for saffron milk:
 ## steps
 
 cook rice:
-1. cook rice in rice cooker with spices and lemon juice
+1. rinse and soak the rice in water for at least 30 minutes (this really does make the rice much fluffier!)  
+2. (while the rice is soaking, this would be a great time to make the biryani shorba)  
+2. in a large pot, lightly toast the dry spices until fragrant  
+3. add enough water to cover the rice (the exact amount doesn't matter since we'll be draining it) and bring to a boil  
+4. add the rice and cook until about 75% done – this can happen quickly, so start checking about 7–8 minutes in  
+5. drain the rice in a collander and spread on a sheet tray to cool  
 
-cook eggs:
-1. cover eggs with 1-inch cold water, bring to boil, remove from heat and cover
-2. let eggs rest in hot water for 10-12 minutes, rinse in cold water and peel
-3. prick eggs randomly with a fork
-4. heat 1 tsp oil, add dry spices and cook until aromatic
-5. roast eggs for 4 minutes until well coated
-6. cut in half and roast 3 more minutes
+cook eggs:  
+1. fill a pot with 1" water, lay a steamer basket inside (or a bamboo one on top)  
+2. heat until the water simmering, then place the eggs in the steamer and cover  
+3. maintain a simmer for 13 minutes, then remove the eggs to an ice bath  
+4. let the eggs sit for 15 minutes, then knock on the counter all over to break the shell (or do the fancy version in the video)  
+5. prick eggs randomly with a fork  
+6. heat 1 tsp oil, add dry spices and cook until aromatic  
+7. pan-fry the eggs for 4 minutes until well coated  
 
 make saffron milk:
-1. heat milk in a pan, pour into bowl and add saffron
+1. optional: toast the saffron for about 30 seconds  
+2. heat milk in a pan, pour into bowl and add saffron
+3. let sit for at least 30 minutes  
 
 make fried onions:
 1. heat 3 tbsp oil on medium
@@ -84,10 +95,11 @@ make gravy:
 8. cook four minutes
 9. add yogurt, mix and cook 5-7 minutes or until "raw smell is gone"
 10. add 1/2 cup water, mix and cook 5 more minutes or until thick
-11. remove from heat and set aside
+11. remove from heat, remove bay leaf, anise, and cinnamon  
+12. blend until smooth but slightly chunky  
 
 assemble:
-1. in a large roasting pan, add 1/3 the rice
+1. in a pressure cooker or other well-sealing pot, add 1/3 the rice
 2. spread 3/4 of the gravy, sprinkle with mint, cilantro, and fried onions
 3. add 1/3 rice
 4. drizzle with 4 tbsp saffron milk, sprinkle with mint and coriander leaves
@@ -96,14 +108,17 @@ assemble:
 7. sprinkle with remaining mint and coriander leaves, fried onions
 
 heat through:
-1. cover with aluminum foil
-2. heat in oven for 15-20 minutes, remove and let rest for 10 minutes more
+1. put the lid tightly on the pot but be sure the pressure valve is released  
+2. place in another larger pot filled with water about 1–2" above the bottom of the pressure cooker  
+3. heat the biryani for about 20 minutes, adding water to the pot below as necessary  
+4. let sit for at least 10 minutes before serving  
+5. serve with biryani shorba and cucumber raita  
 
 ## notes
-* 1.5-cups rice not quite enough for our roasting pan, maybe try 2-cups?  
-* Gravy takes about 30 mins to make, so start it early  
+* Gravy, biryani shorba, and cucumber raita take quite a while to make so start them all early!  
 
 ## based on
 * https://www.indianhealthyrecipes.com/hyderabadi-egg-biryani-recipe-dum-biryani  
 * https://www.mygingergarlickitchen.com/how-to-make-easy-restaurant-style-egg-dum-biryani-recipe  
+* https://www.youtube.com/watch?v=RV9nz1qlY64  
 

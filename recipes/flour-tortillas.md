@@ -14,7 +14,7 @@
 5. Cover with a damp cloth or plastic wrap and let rest for 10 mins  
 6. Divide dough into 10 pieces and roll each into a ball, cover again and let rest 15 mins  
 7. Heat cast iron skillet over medium-high heat  
-8. Pat dough ball into a flat disc, roll out into a very thing 8-inch round  
+8. Pat dough ball into a flat disc, roll out into a very thin 8-inch round  
 9. Place in skillet and cook until bubbles form on top and bottom has light-brown spots  
 10. Flip and cook until second side has light-brown spots  
 11. Transfer to a plate and cover with a dish cloth  

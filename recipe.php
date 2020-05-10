@@ -138,6 +138,11 @@
 						$(this).html(str);
 					});
 
+					// in info, add labels to time/quantity
+					var time =  $('#info li:eq(0)');
+					var makes = $('#info li:eq(1)');
+					$('#info ul').html('<li><span id="time">TIME </span>' + time.text() + '</li><li><span id="makes">MAKES </span>' + makes.text() + '</li>');
+
 					// add some links re the recipe
 					var recipeName = $('h1').text().toLowerCase();
 					recipeName = recipeName.replace(' ', '+');
@@ -201,6 +206,7 @@
 	<div id="wrapper" class="recipe">
 		<p id="back"><a href="index.php">&larr;&nbsp;&nbsp;&nbsp;</a></p>
 		<section id="title"></section>
+		<section id="info"></section>
 		<section id="ingredients"></section>
 		<section id="steps"></section>
 		<hr />

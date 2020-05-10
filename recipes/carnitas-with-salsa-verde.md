@@ -30,7 +30,7 @@ cook the pork:
 6. When done, discard the orange, onion, garlic, cinnamon, and bay leaves  
 7. Transfer pork and liquid to a strainer and let drain for 10 mins  
 8. Put pork back in roasting pan  
-9. Skim fat from the surface of the strained liquid and add back to pork  
+9. Skim fat from the surface of the strained liquid and add back to pork (can add a little of the pork liquid too, but not too much – add some oil if there's not enough fat)  
 10. Shred into large chunks with two forks and season to taste with salt  
 
 make the salsa:  
@@ -45,9 +45,11 @@ cook the pork (again):
 2. Cook until brown and cristp, stir and repeat several more times  
 
 to serve:  
-1. Heat tortillas in the skillet  
-2. Combine the finely-chopped onion and cilantro in a bowl  
-3. Serve with lime wedges and crumbled queso fresco  
+1. Combine the finely-chopped onion and cilantro in a bowl  
+2. Serve with lime wedges and crumbled queso fresco  
+
+## notes  
+* Rick at Bon Appetit suggests adding 1 tbsp apple cider vinegar (or other acid) at the end to "wake up" the flavors  
 
 ## based on
 * https://www.seriouseats.com/recipes/2010/07/no-waste-tacos-de-carnitas-with-salsa-verde-recipe.html  

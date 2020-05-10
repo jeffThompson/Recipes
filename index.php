@@ -46,14 +46,26 @@
 				$files = array_map('basename', glob('recipes/*.md'));
 			?>
 			var files = <?php echo json_encode($files) ?>;
-			var html = '';
+			var listOfRecipes = '';
+			var listOfLetters = '';
+			var prevLetter = '';
 			for (var i in files) {
 				var url = files[i];
 				var anchor = url.replace('.md', '');
 				var name = anchor.split('-').join(' ');
-				html += '<li><a href="recipe.php#' + anchor + '">' + name + '</a></li>';
+				var firstLetter = name.charAt(0).toUpperCase();
+				if (firstLetter != prevLetter) {
+					listOfRecipes += '<li id="' + firstLetter + '">';
+					listOfLetters += '<a href="#' + firstLetter + '">' + firstLetter + ' </a>';
+				}
+				else {
+					listOfRecipes += '<li>';
+				}
+				listOfRecipes += '<a href="recipe.php#' + anchor + '">' + name + '</a></li>';
+				prevLetter = firstLetter;
 			}
-			$('#toc ul').html(html);
+			$('#toc ul').html(listOfRecipes);
+			$('#navigation').html(listOfLetters);
 		});
 	</script>
 </head>
@@ -61,11 +73,24 @@
 <body>
 	<div id="wrapper" class="index">
 		<section id="toc">
-			<h1>Recipe Book</h1>
+			<h1 id="mainTitle">Recipe Book</h1>
+
+			<p id="navigation">
+				<!-- <?php
+				$letters = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
+								 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
+				                 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
+				foreach($letters as &$letter) {
+					echo '<a href="#' . $letter . '">' . $letter . ' </a>';
+				}
+				echo PHP_EOL;
+				?> -->
+			</p>
+
 			<ul> <!-- your recipes will go here --> </ul>
 		</section>
 		<section id="footer">
-			<p>A super minimal recipe website by <a href="http://www.jeffreythompson.org">Jeff Thompson</a></p>
+			<p>A super minimal recipe website by <a href="http://www.jeffreythompson.org">Jeff Thompson</a> | <a href="https://github.com/jeffThompson/Recipes">Source code</a></p>
 		</section>
 	</div>
 </body>

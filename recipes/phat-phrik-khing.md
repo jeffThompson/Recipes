@@ -1,5 +1,5 @@
 # Phat Phrik Khing  
-**Thai dry-curry stir-fry with tofu and long beans**
+(Thai dry-curry stir-fry with tofu and long beans)
 
 ## ingredients
 * Thai red curry paste (Mae Ploy brand is best, Thai Kitchen is so-so)  
