@@ -40,7 +40,8 @@
 		}
 
 		// once document is loaded, load list of markdown files
-		// and generate table of contents
+		// and generate table of contents, plus a quick-nav list
+		// at the top
 		$(document).ready(function() {
 			<?php
 				$files = array_map('basename', glob('recipes/*.md'));
@@ -75,17 +76,7 @@
 		<section id="toc">
 			<h1 id="mainTitle">Recipe Book</h1>
 
-			<p id="navigation">
-				<!-- <?php
-				$letters = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
-								 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
-				                 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
-				foreach($letters as &$letter) {
-					echo '<a href="#' . $letter . '">' . $letter . ' </a>';
-				}
-				echo PHP_EOL;
-				?> -->
-			</p>
+			<p id="navigation"></p>
 
 			<ul> <!-- your recipes will go here --> </ul>
 		</section>
