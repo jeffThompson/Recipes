@@ -36,6 +36,13 @@ A delicious light-red drink
 * https://www.instagram.com/p/Bq3ckR8HIDE/
 ```
 
+You can optionally include info about how long the recipe takes and how many servings it makes:  
+
+```## info  
+* Takes about 90 minutes  
+* Enough for a large biryani or a full-sized curry
+```
+
 The `Ingredients` and `Steps` sections can be split with subheaders too:
 
 ```## steps
