@@ -151,12 +151,18 @@
 					var imageUrl = 'https://www.google.com/search?q=' + recipeName + '&tbm=isch';
 					var seriousEatsUrl = 'https://www.seriouseats.com/search?term=' + recipeName;
 
+					// link icon svg code
+					// via: https://fontawesome.com/icons/external-link-alt
+					var linkIcon = '<svg class="linkIcon" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">';
+					linkIcon += '<path fill="currentColor" d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"></path>';
+					linkIcon += '</svg>';
+
 					var html = '<h2>help!</h2>';
 					html += '<ul>';
-					html += '<li><a href="' + imageUrl + '" target="blank">Image search</a> <img src="images/external-arrow.png" class="externalArrow"></li>';
-					html += '<li><a href="' + seriousEatsUrl + '" target="blank">Serious Eats</a> <img src="images/external-arrow.png" class="externalArrow"></li>';
-					html += '<li><a href="' + googleUrl + '" target="blank">More recipes</a> <img src="images/external-arrow.png" class="externalArrow"></li>';
-					html += '<li><a href="' + yelpUrl + '" target="blank">Yelp (takeout pls)</a> <img src="images/external-arrow.png" class="externalArrow"></li>';
+					html += '<li><a href="' + imageUrl + '" target="blank">Image search' + linkIcon + '</a></li>';
+					html += '<li><a href="' + seriousEatsUrl + '" target="blank">Serious Eats' + linkIcon + '</a></li>';
+					html += '<li><a href="' + googleUrl + '" target="blank">More recipes' + linkIcon + '</a></li>';
+					html += '<li><a href="' + yelpUrl + '" target="blank">Yelp (takeout pls)' + linkIcon + '</a></li>';
 					html += '</ul>';
 					$('#help').html(html);
 
@@ -204,7 +210,14 @@
 
 <body>
 	<div id="wrapper" class="recipe">
-		<p id="back"><a href="index.php">&larr;&nbsp;&nbsp;&nbsp;</a></p>
+		<p id="back">
+			<a href="index.php">
+				<!-- via: https://fontawesome.com/icons/arrow-left -->
+				<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+					<path fill="currentColor" d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"></path>
+				</svg>
+			</a>
+		</p>
 		<section id="title"></section>
 		<section id="info"></section>
 		<section id="ingredients"></section>
