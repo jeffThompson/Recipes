@@ -52,10 +52,13 @@
 			var prevLetter = '';
 			for (var i in files) {
 				var url = files[i];
+				if (url === '_blank.md') {
+					continue;
+				}
 				var anchor = url.replace('.md', '');
 				var name = anchor.split('-').join(' ');
 				var firstLetter = name.charAt(0).toUpperCase();
-				if (firstLetter != prevLetter) {
+				if (firstLetter !== prevLetter) {
 					listOfRecipes += '<li id="' + firstLetter + '">';
 					listOfLetters += '<a href="#' + firstLetter + '">' + firstLetter + ' </a>';
 				}
