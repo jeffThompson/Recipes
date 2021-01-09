@@ -149,7 +149,7 @@
 					var yelpUrl = 'https://www.yelp.com/search?find_desc=' + recipeName;
 					var googleUrl = 'https://www.google.com/search?q=' + recipeName + '+recipe';
 					var imageUrl = 'https://www.google.com/search?q=' + recipeName + '&tbm=isch';
-					var seriousEatsUrl = 'https://www.seriouseats.com/search?term=' + recipeName;
+					var seriousEatsUrl = 'https://www.seriouseats.com/search?term=' + recipeName + '&site=recipes';
 
 					// link icon svg code
 					// via: https://fontawesome.com/icons/external-link-alt
