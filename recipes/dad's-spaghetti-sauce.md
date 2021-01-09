@@ -16,13 +16,14 @@
 * 1 tsp dried thyme  
 * 1 tsp dried rosemary  
 * Salt, pepper, and red pepper flakes to taste  
+* 2 tbsp milk or cream (optional)  
 
 ## steps  
 1. In a skillet, brown the ground beef and onion until cooked through  
 2. Just before the meat is cooked, add the minced garlic and cook until aromatic  
 3. Drain the fat and transfer the meat back to the pan  
-4. Add tomato and spices, bring to a boil then reduce the heat and simmer for 2–4 hours, stirring every 15–20 minutes, until thickened and flavor is developed  
-5. After about 30–60 minutes, dd additional oregano, basil, and salt/pepper as needed  
+4. Add tomato and spices, bring to a boil then reduce the heat and simmer for 2–4 hours, stirring every 20–30 minutes, until thickened and flavor is developed  
+5. When ready to eat, add optionally milk/cream and about 1/2-cup pasta water; bring to a boil and let sauce cook until smooth  
 
 ## notes  
 * Dad suggests using a 50/50 blend of ground beef and Italian sausage, omitting the sage if you do that  

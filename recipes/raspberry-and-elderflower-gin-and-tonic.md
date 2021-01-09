@@ -3,9 +3,10 @@
 ## ingredients
 * 8 raspberries (frozen ok but should be thawed)  
 * Fresh thyme (optional)  
-* Gin  
+* 1.5 oz gin  
 * 1/2 lime  
 * 1-2 tbsp St Germaine (or 1-2 tsp simple syrup)  
+* Tonic  
 
 ## steps
 1. Muddle raspberries with 1.5 oz gin (and fresh thyme, if using)  
@@ -17,4 +18,5 @@
 * Replace tonic with champagne for a *French 75* mashup   
 
 ## based on
-* https://www.instagram.com/p/Bq3ckR8HIDE/
+* https://www.instagram.com/p/Bq3ckR8HIDE  
+

@@ -31,7 +31,9 @@
 
 ## notes
 * Optional: add smoked paprika at the end with the salt and pepper  
+* As per the Amazing Ribs recipe, instead of baking in the oven, you can smoke the mac-n-cheese over 350º F, indirect heat for about 40 minutes (they also suggest mixing the panko with 3 tbsp melted butter!)  
 
 ## based on
 * https://www.seriouseats.com/recipes/2007/10/baked-vegetarian-macaroni-and-cheese-recipe.html
+* https://amazingribs.com/tested-recipes/other-fun-food-recipes/smoked-mac-and-cheese-recipe  
 
