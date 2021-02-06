@@ -138,6 +138,11 @@
 						$(this).html(str);
 					});
 
+					// in info, force images to 100% width
+					$('#info img').each( function() {
+						$(this).width('100%');
+					});
+
 					// in info, add labels to time/quantity
 					var time =  $('#info li:eq(0)');
 					var makes = $('#info li:eq(1)');
