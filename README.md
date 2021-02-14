@@ -7,10 +7,35 @@ Create a new recipe as a [Markdown file](https://daringfireball.net/projects/mar
 Each recipe will auto-generate links to a Google image search for that dish, recipes on Serious Eats and Google, and for restaurants on Yelp (in case you burn something and need takeout fast).
 
 ## BONUS!  
-To save your place while looking up at the ingredients, click the step you're on to highlight it. Click it again to remove the highlight, or use the left/right arrow keys to advance.
+To save your place while scrolling up around on the page, click the step you're on to highlight it. Click it again to remove the highlight, or use the left/right arrow keys to advance.
 
 ## RECIPE FORMAT  
-In order to show up properly, your recipe's Markdown file should be named with dashes in place of spaces (ex: `rice-pilaf.md` or `saag-paneer.md`) and the file should follow this format:
+In order to show up properly, your recipe's Markdown file should be named with dashes in place of spaces (ex: `rice-pilaf.md` or `saag-paneer.md`). This will be used to populate your list of recipes on the main page.
+
+Use `recipe-template.md` and/or follow this format:
+
+```markdown
+# TITLE
+Optional subheader
+
+## info  
+* About XXX minutes  
+* XXX servings  
+
+## ingredients
+* 
+
+## steps  
+1. 
+
+## notes  
+* 
+
+## based on  
+* url to where the recipe came from
+```
+
+For example:
 
 ```markdown
 # Raspberry and Elderflower Gin and Tonic

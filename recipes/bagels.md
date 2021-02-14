@@ -9,7 +9,7 @@
 * 4 tsp vital wheat gluten (optional, sub with more flour)  
 * 2 tsp instant yeast  
 * 9 oz cold water  
-* 1–2 tbsp malt syrup  
+* 1–2 tbsp malt syrup (or honey)  
 * 2 tsp salt  
 * Cornmeal  
 * 1/4 cup baking soda  
@@ -21,11 +21,11 @@
 3. Let dough sit for 20 minutes  
 4. Add salt, run food processor for 90 seconds  
 5. Remove dough and knead for about a minute  
-6. Divide into eight balls (for small-ish bagels) or 6 (for big ones)  
+6. Divide into eight balls (for small-ish bagels) or 6 (for normal ones)  
 7. Roll into round balls (do not flatten), cover, and let sit for 15 minutes  
 8. Lightly grease a baking sheet with olive oil, then thoroughly dust with cornmeal  
 9. Place dough ball on work surface; poke hole with finger, then work into an even, bagel-like shape (hole should be slightly larger than you think it should be but don't make the bagels too thin!) and place on baking sheet  
-10. Cover and let sit for an hour, then transfer to fridge for 12–24 hours (though up to 40 hours is probably ok)  
+10. Cover and let sit for an hour, then transfer to fridge for 12–24 hours (see note)  
 
 Cook the bagels  
 1. Bring a pot of water to a full boil, add baking soda  
@@ -38,8 +38,9 @@ Cook the bagels
 7. Remove to a wire rack and let rest for at least 15 minutes before eating  
 
 ## notes  
+* Proofing times vary by recipe: some say up to 40 hours is probably ok though I found that I can't really tell the difference when proofing longer than 12 hours  
 * While some recipes call for sugar or malt syrup in the boiling water, I find it's overly-sweet  
-* The longer you boil the bagels, the more chewy they will become. I find 30–40 seconds is what I like, but you can experiment here! 60 seconds per side is probably the max  
+* The longer you boil the bagels, the more chewy they will become but you risk deflation. I find 30–40 seconds is what I like, but you can experiment here! 60 seconds per side is probably the max  
 * See some of the troubleshooting links below for info on what you can tweak in the recipe and the effects those changes will have
 
 ## based on  

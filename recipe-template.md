@@ -1,8 +1,9 @@
-# 
+# TITLE
+Optional subheader
 
 ## info  
-* About  minutes  
-* servings  
+* About XXX minutes  
+* XXX servings  
 
 ## ingredients
 * 
