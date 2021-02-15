@@ -5,12 +5,12 @@ A super minimal recipe website – great for keeping track of family recipes, m
 **See it in action here: [jeffreythompson.org/recipes](http://jeffreythompson.org/recipes)**
 
 Features:
-* Recipes in a simple [Markdown file](https://daringfireball.net/projects/markdown), just dump it in a folder and upload  
+* Recipes in a simple [Markdown format](https://daringfireball.net/projects/markdown), just dump them in a folder and upload  
 * List of recipes will auto-populate with quick alpha links at the top  
-* Each recipe is displayed in a nice, clean format designed for use while cooking or at the grocery store  
+* Each recipe is displayed in a nice, clean format designed for use while cooking or at the grocery store – no extra 💩 or ads  
 * Auto-generated links to a Google image search for that dish, recipes on Serious Eats and Google, and for restaurants on Yelp (in case you burn something and need takeout fast)  
 * To save your place while scrolling up around on the page, click the step you're on to highlight it; click it again to remove the highlight, or use the left/right arrow keys to advance  
-* Easily customized and code is (mostly) really well annotated  
+* Easily customized and code is (mostly) really well annotated 🙃  
 
 
 ## MORE INFO  
@@ -21,7 +21,7 @@ Features:
 ## RECIPE FORMAT  
 In order to show up properly, your recipe's Markdown file should be named with dashes in place of spaces (ex: `rice-pilaf.md` or `saag-paneer.md`). This will be used to populate your list of recipes on the main page.
 
-Use `recipe-template.md` and/or follow this format:
+Use `_template.md` and/or follow this format:
 
 ```markdown
 # TITLE
@@ -70,7 +70,7 @@ A delicious light-red drink perfect for winter gatherings!
 * https://www.instagram.com/p/Bq3ckR8HIDE/
 ```
 
-You can optionally include info about how long the recipe takes and how many servings it makes:  
+You can optionally include info about how long the recipe takes and how many servings it makes. Put this before the `Ingredients` list:  
 
 ```## info  
 * Takes about 90 minutes  
@@ -98,4 +98,13 @@ Thanks to a suggestion from @mpember, if you have a `jpg` image with the same fi
 For example: `aloo-matar.md` should have an image called `aloo-matar.jpg` in the `images` folder.
 
 You can also include other images in the recipe using Markdown's image syntax: `![alt text](url)`. You'll probably want to update the stylesheet to size them appropriately.
+
+## OTHER OPTIONS  
+The `recipe.php` file also includes some more options you can customize:
+
+* `yelpLocation`: the city/state where you're located to make Yelp searches easier! No need for fancy formatting, this will work fine: `Minneapolis MN`  
+* `helpUrls`: dictionary with the `label` (text displayed) and `url` in template form. The string `<name>` will be replaced with your recipe's name  
+* `lookForHeroImage`: on by default, but you can turn it off if you never intend to include hero images  
+* `autoUrlSections`: list of sections in the recepe template where you want raw URLs (ex: www.instagram.com) to be turned into real links. Great for the `Based On` section but not so good if you want to include Markdown-formatted links in other sections  
+* `shortenUrls`: turns a super-long url into just the main domain name (link will still work as normal, just less cluttered). Off by default but exists if you want it
 
