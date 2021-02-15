@@ -17,6 +17,7 @@ Features:
 * [Recipe format](#recipe-format)
 * [Adding images](#adding-images)
 * [Other options](#other-options)
+* [Suggestions welcome!](#suggestions-welcome)
 
 
 ## RECIPE FORMAT  
@@ -109,4 +110,8 @@ The `recipe.php` file also includes some more options you can customize:
 * `lookForHeroImage`: on by default, but you can turn it off if you never intend to include hero images  
 * `autoUrlSections`: list of sections in the recepe template where you want raw URLs (ex: www.instagram.com) to be turned into real links. Great for the `Based On` section but not so good if you want to include Markdown-formatted links in other sections  
 * `shortenUrls`: turns a super-long url into just the main domain name (link will still work as normal, just less cluttered). Off by default but exists if you want it
+
+
+## SUGGESTIONS WELCOME  
+If you have suggestions for improving this project, please let me know! Either [open an issue](https://github.com/jeffThompson/Recipes/issues/new) or send me an email!
 
