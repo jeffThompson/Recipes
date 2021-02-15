@@ -28,21 +28,9 @@
 
 ## notes    
 * These are *really* good on bao with some Bonchon-style hot sauce!
-* Consider adding this to the flour:
-  * 2 tsp baking powder 
-  * 1/4 cup gochugaru (Korean red chlii flakes)
-  * 1 tbsp black pepper
-  * 2 tbsp garlic powder
-  * 1.5 tsp kosher salt
-* You can also change up the brine:
-  * 1/2 cup kimchi juice  
-  * 1 cup buttermilk
-  * 1 egg
-  * 1.5 tsp kosher salt
-  * 1 tbsp soy sauce
-  * 1/4 cup gochugaru
-  * 2 tbsp black pepper 
-* Can use half butter, half oil to fry 
+* Consider adding this to the flour: 2 tsp baking powder, 1/4 cup gochugaru (Korean red chlii flakes), 1 tbsp black pepper, 2 tbsp garlic powder, 1.5 tsp kosher salt  
+* You can also change up the brine: 1/2 cup kimchi juice, 1 cup buttermilk, 1 egg, 1.5 tsp kosher salt, 1 tbsp soy sauce, 1/4 cup gochugaru, 2 tbsp black pepper  
+* Can use half butter, half oil to fry  
 
 ## based on  
 * https://www.seriouseats.com/recipes/2014/04/chicken-schnitzel-recipe.html  

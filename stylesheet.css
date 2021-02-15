@@ -13,22 +13,23 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
 /* basics */
 html, body {
-  background-color:   white;
+  background-color: white;
 
-  font-family:        'Fira Sans', sans-serif;
-  font-size:          18px;
+  font-family:      'Fira Sans', sans-serif;
+  font-size:        18px;
 }
 strong {
   font-weight: 700;
 }
 em {
-  font-style:  italic;
+  font-style: italic;
 }
 
 /* images full width */
 /* h/t @mpember for the pr suggestion */
-img {
-  width: 100%;
+#heroimage img {
+  width:  100%;
+  border: 1px solid rgb(200,200,200);
 }
 
 /* section dividers */
@@ -106,7 +107,8 @@ ol li {
 }
 
 #navigation {
-  margin:      0.7em 0 2.6em 0;
+  max-width:   500px;
+  margin:      0.7em auto 2.6em auto;
   line-height: 1.7em;
   text-align:  center;
 }
@@ -127,6 +129,11 @@ a, a:link, a:visited {
 a:active, a:hover {
   color:            black !important;
   background-color: rgba(255,255,0, 0.5);
+}
+
+/* notes links should have an underline */
+#notes a {
+  text-decoration: underline;
 }
 
 /* make sure long urls split at slashes */
