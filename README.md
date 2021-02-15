@@ -113,5 +113,5 @@ The `recipe.php` file also includes some more options you can customize:
 
 
 ## SUGGESTIONS WELCOME  
-If you have suggestions for improving this project, please let me know! Either [open an issue](https://github.com/jeffThompson/Recipes/issues/new) or send me an email!
+If you have suggestions for improving this project, please let me know! Either [open an issue](https://github.com/jeffThompson/Recipes/issues/new) or send me an email.
 
