@@ -16,6 +16,7 @@ Features:
 ## MORE INFO  
 * [Recipe format](#recipe-format)
 * [Adding images](#adding-images)
+* [Other options](#other-options)
 
 
 ## RECIPE FORMAT  
@@ -98,6 +99,7 @@ Thanks to a suggestion from @mpember, if you have a `jpg` image with the same fi
 For example: `aloo-matar.md` should have an image called `aloo-matar.jpg` in the `images` folder.
 
 You can also include other images in the recipe using Markdown's image syntax: `![alt text](url)`. You'll probably want to update the stylesheet to size them appropriately.
+
 
 ## OTHER OPTIONS  
 The `recipe.php` file also includes some more options you can customize:
