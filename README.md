@@ -1,13 +1,22 @@
 # RECIPE BOOK
 
-A super minimal recipe website. **See it in action here: [jeffreythompson.org/recipes](http://jeffreythompson.org/recipes)**
+A super minimal recipe website – great for keeping track of family recipes, mods to ones you find online, or have created yourself!
 
-Create a new recipe as a [Markdown file](https://daringfireball.net/projects/markdown), dump it in a folder and upload. The list will auto-populate and each recipe is displayed in a nice, clean format designed for use while cooking or at the grocery store. Great for keeping track of family recipes, mods to ones you find online, or have created yourself!
+**See it in action here: [jeffreythompson.org/recipes](http://jeffreythompson.org/recipes)**
 
-Each recipe will auto-generate links to a Google image search for that dish, recipes on Serious Eats and Google, and for restaurants on Yelp (in case you burn something and need takeout fast).
+Features:
+* Recipes in a simple [Markdown file](https://daringfireball.net/projects/markdown), just dump it in a folder and upload  
+* List of recipes will auto-populate with quick alpha links at the top  
+* Each recipe is displayed in a nice, clean format designed for use while cooking or at the grocery store  
+* Auto-generated links to a Google image search for that dish, recipes on Serious Eats and Google, and for restaurants on Yelp (in case you burn something and need takeout fast)  
+* To save your place while scrolling up around on the page, click the step you're on to highlight it; click it again to remove the highlight, or use the left/right arrow keys to advance  
+* Easily customized and code is (mostly) really well annotated  
 
-## BONUS!  
-To save your place while scrolling up around on the page, click the step you're on to highlight it. Click it again to remove the highlight, or use the left/right arrow keys to advance.
+
+## MORE INFO  
+* [Recipe format](#recipe-format)
+* [Adding images](#adding-images)
+
 
 ## RECIPE FORMAT  
 In order to show up properly, your recipe's Markdown file should be named with dashes in place of spaces (ex: `rice-pilaf.md` or `saag-paneer.md`). This will be used to populate your list of recipes on the main page.
@@ -39,7 +48,7 @@ For example:
 
 ```markdown
 # Raspberry and Elderflower Gin and Tonic
-A delicious light-red drink
+A delicious light-red drink perfect for winter gatherings!
 
 ## ingredients
 * 8 raspberries (frozen ok but should be thawed)  
@@ -82,4 +91,11 @@ To fry:
 3. Slide into oil and cook, flipping often, until golden  
 4. Drain on paper towels  
 ```
+
+## ADDING IMAGES  
+Thanks to a suggestion from @mpember, if you have a `jpg` image with the same filename as your recipe, it will automatically be added! 
+
+For example: `aloo-matar.md` should have an image called `aloo-matar.jpg` in the `images` folder.
+
+You can also include other images in the recipe using Markdown's image syntax: `![alt text](url)`. You'll probably want to update the stylesheet to size them appropriately.
 
