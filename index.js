@@ -1,3 +1,21 @@
+'use strict'
+
++function() {
+	if (!('serviceWorker' in navigator)) {
+		alert('This Browser does not support ServiceWorkers.')
+		return
+	}
+	if (navigator.serviceWorker.controller) {
+		console.info('ServiceWorker runs')
+		return
+	}
+	console.info('Registering ServiceWorker ...')
+	navigator.serviceWorker
+	.register('./serviceworker.js')
+	.catch(function(err) {
+		console.error('ServiceWorker has not been registered!', err)
+	})
+}()
 
 // once document is loaded, load list of markdown files
 // and generate table of contents, plus a quick-nav list
