@@ -23,7 +23,7 @@ Features:
 ## RECIPE FORMAT  
 In order to show up properly, your recipe's Markdown file should be named with dashes in place of spaces (ex: `rice-pilaf.md` or `saag-paneer.md`). This will be used to populate your list of recipes on the main page.
 
-Use `tecipe-template.md` and/or follow this format:
+Use `recipe-template.md` and/or follow this format:
 
 ```markdown
 # TITLE

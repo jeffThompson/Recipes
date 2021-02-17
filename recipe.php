@@ -6,8 +6,8 @@
 		<!-- basics -->
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-		<link rel="icon" type="image/png" href="http://www.jeffreythompson.org/graphics/favicon.png">
-		
+		<link rel="icon" type="image/png" href="images/cookbook-192.png">
+
 		<!-- font and styles -->
 		<link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,700,700i,900,900i" rel="stylesheet"> 
 		<link href="stylesheet.css" rel="stylesheet" type="text/css">
@@ -89,6 +89,6 @@
 
 	<!-- parses and displays recipe -->
 	<script src="utils.js"></script>
-	<script src="create-recipe.js"></script>
+	<script src="recipe.js"></script>
 </html>
 
