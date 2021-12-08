@@ -3,10 +3,14 @@
 	<head>
 		<title>Recipe Book</title>
 
+		<!-- pwa -->
+		<link rel="manifest" href="manifest.json" crossorigin="use-credentials"/>
+
 		<!-- basics -->
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-		<link rel="icon" type="image/png" href="http://www.jeffreythompson.org/graphics/favicon.png">
+		<meta name="mobile-web-app-capable" content="yes">
+		<link rel="icon" type="image/png" href="images/cookbook-192.png">
 
 		<!-- font and styles -->
 		<link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,700,700i,900" rel="stylesheet"> 
@@ -57,6 +61,6 @@
 	
 	<!-- javascript does the rest :) -->
 	<script src="utils.js"></script>
-	<script src="list-recipes.js"></script>
+	<script src="index.js"></script>
 </html>
 

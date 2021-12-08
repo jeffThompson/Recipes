@@ -1,0 +1,28 @@
+{
+  "short_name": "Recipe Book",
+  "name": "Recipe Book",
+  "icons": [{
+    "src": "images/cookbook-48.png",
+    "type": "image/png",
+    "sizes": "48x48"
+  },
+  {
+    "src": "images/cookbook-96.png",
+    "type": "image/png",
+    "sizes": "96x96"
+  },
+  {
+    "src": "images/cookbook-144.png",
+    "type": "image/png",
+    "sizes": "144x144"
+  },
+  {
+    "src": "images/cookbook-192.png",
+    "type": "image/png",
+    "sizes": "192x192"
+  }],
+  "display": "standalone",
+  "orientation": "portrait",
+  "start_url": "index.php",
+  "background_color": "#78909c"
+}
