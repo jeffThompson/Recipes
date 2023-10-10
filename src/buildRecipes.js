@@ -49,7 +49,7 @@ const RegExes = {
   PAGE_TITLE:    /<title>.*?<\/title>/,
 
   PARENS:        /\(([^)]+)\)/g,
-  NUMERIC:       /<li>([\d½⅓⅔¼¾⅕⅖⅗⅘⅙⅚⅐⅛⅜⅝⅞]+)(.*)<\/li>/
+  NUMERIC:       /<li>([\d½⅓⅔¼¾⅕⅖⅗⅘⅙⅚⅐⅛⅜⅝⅞/-]+)(.*)<\/li>/
 };
 /* eslint-enable key-spacing */
 

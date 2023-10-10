@@ -2,7 +2,7 @@
 
 A super minimal recipe website – great for keeping track of family recipes, mods to ones you find online, or have created yourself!
 
-> **Note:** *This fork is a NodeJs port of Jeffrey Thompson's PHP Recipes project*
+> **Note:** *This fork is a NodeJs port of Jeffrey Thompson's PHP Recipes project. Unlike the original project which serves pages dynamically this publishes your recipes, making a static site accessible without apache or Node running. After building (converting the Markdown/text recipes to HTML) you can immediately view them in your browser.*
 
 **See it in action here: [jeffreythompson.org/recipes](http://jeffreythompson.org/recipes)**
 
@@ -21,6 +21,7 @@ A super minimal recipe website – great for keeping track of family recipes, m
 * [Adding images](#adding-images)
 * [Other options](#other-options)
 * [Suggestions welcome!](#suggestions-welcome)
+* [Colophon & Thank Yous](#Colophon)
 
 ### Installation
 
@@ -107,7 +108,7 @@ The `Ingredients` and `Steps` sections can be split with subheaders too:
 3. Put in mixing bowl and whip with hands for 2-3 minutes until fluffy  
 4. Add spices, herbs, and salt and whip again to combine  
 
-To fry:
+### To fry:
 1. Heat oil over medium/medium-high heat  
 2. Take a bowl of water, wet hands, and form small balls  
 3. Slide into oil and cook, flipping often, until golden  
@@ -135,3 +136,10 @@ The `recipe.html` template file also includes some more options you can customiz
 
 ## SUGGESTIONS WELCOME  
 If you have suggestions for improving this project, please let me know! Either [open an issue](https://github.com/jeffThompson/Recipes/issues/new) or send me an email.
+
+## Colophon & Thank Yous
+
+Site built with:
+
+* Navigation arrows via [FontAwesome](https://fontawesome.com/icons/external-link-alt)
+* [showdown](https://www.npmjs.com/package/showdown) conversion library, Markdown to HTML 

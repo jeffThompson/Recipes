@@ -11,12 +11,15 @@
 * Olive oil  
 
 ## steps
-**The day before**  
+
+### The day before
+
 1. The day before cooking the turkey, spatchcock the bird, rinse with water, and dry thoroughly with paper towels  
 2. Rub with kosher salt across entire surface of the bird  
 3. Place on a wire-rimmed baking sheet and let sit in the fridge, uncovered, for approximately 24 hours to dry brine  
 
-**The day of (approximately 4 hours before eating)**  
+### The day of (approximately 4 hours before eating)
+
 1. Light a chimney with charcoal, place on one side for indirect heat  
 2. Add a water pan on the other side  
 3. Add hardwood chunks to coals (apple is a nice choice)  
@@ -34,4 +37,3 @@
 ## based on  
 * https://amazingribs.com/tested-recipes/turkey-recipes/bbq-and-grilled-turkey-recipe  
 * https://www.seriouseats.com/2019/12/how-to-dry-brine.html  
-
