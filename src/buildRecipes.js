@@ -33,6 +33,10 @@ const Styles = {
   HELP_LINK:      'help-link',
   HERO_IMG:       'hero-img',
   PAREN:          'paren',
+
+  HAS_NUMERIC:    'ingredient--align',
+  NUMERIC:        'ingredient--amt',
+  UNITS:          'ingredient--text',
 };
 
 const RegExes = {
@@ -45,6 +49,7 @@ const RegExes = {
   PAGE_TITLE:    /<title>.*?<\/title>/,
 
   PARENS:        /\(([^)]+)\)/g,
+  NUMERIC:       /<li>([\d½⅓⅔¼¾⅕⅖⅗⅘⅙⅚⅐⅛⅜⅝⅞]+)(.*)<\/li>/
 };
 /* eslint-enable key-spacing */
 
@@ -119,10 +124,12 @@ function prettyInfoSection(section) {
   return section;
 }
 
-function prettyInstructionsSection(section) {
-  return section.replace(RegExes.LI, str => str.replace(RegExes.PARENS, `<span class="${Styles.PAREN}">($1)</span>`));
+function prettyIngredientsSection(section) {
+  return section.replace(RegExes.LI, str => str
+    .replace(RegExes.NUMERIC, `<li class="${Styles.HAS_NUMERIC}"><span class="${Styles.NUMERIC}">$1</span><span class="${Styles.UNITS}">$2</span></li>`)
+    .replace(RegExes.PARENS, `<span class="${Styles.PAREN}">($1)</span>`)
+  );
 }
-
 
 function getHelpSection(helpURLs, name) {
   const recipeName = name.replace(' ', '+');
@@ -177,7 +184,7 @@ function writeRecipe(recipeTemplate, converter, config, path, name) {
       case SectionTypes.INGREDIENTS:
         // in the ingredients, make things in parentheses a
         // bit lighter
-        section = prettyInstructionsSection(section);
+        section = prettyIngredientsSection(section);
         break;
       case SectionTypes.INFO:
         // in info, add labels to time/quantity

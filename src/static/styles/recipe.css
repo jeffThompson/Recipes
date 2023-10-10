@@ -1,7 +1,21 @@
 .paren {
-  color: rgb(170, 170, 170);
+  color: rgb(129 129 129);
   font-style: italic;
 }
+
+.ingredient--align {
+  display: flex;
+}
+
+.ingredient--amt {
+  display: inline-block;
+  min-width: 1.5em;
+}
+
+/*
+.ingredient--text {
+}
+*/
 
 .back-link {
   margin-top: -0.6em;
@@ -44,6 +58,14 @@ svg.linkIcon {
   display: none;
 }
 
+.section--steps {
+  font-size: 14px;
+}
+
+.section--ingredients {
+  font-size: 13px;
+}
+
 .section--ingredients li::first-letter,
 .section--steps li::first-letter,
 .section--notes li::first-letter,
@@ -72,8 +94,20 @@ svg.linkIcon {
   margin-left: 1em;
 }
 
+.section--steps li {
+  margin-bottom: .97em;
+}
+
 .section--notes ul li {
   margin-bottom: 0.4em;
+}
+
+.section--ingredients h3 {
+  margin-bottom: .6em;
+}
+
+.section--ingredients ul + h3 {
+  margin-top: 1.8em;
 }
 
 /* notes links should have an underline */
