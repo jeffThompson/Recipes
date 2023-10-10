@@ -50,7 +50,15 @@ const RegExes = {
   PAGE_TITLE:    /<title>.*?<\/title>/,
 
   PARENS:        /\(([^)]+)\)/g,
-  NUMERIC:       /<li>([\d½⅓⅔¼¾⅕⅖⅗⅘⅙⅚⅐⅛⅜⅝⅞/-]+)(.*)<\/li>/
+  /**
+   * @example
+   * "1 3/4 - 2 cups graham cracker crumbs"
+   * "1 to 2 tablespoons lemon juice"
+   * "½ cup calamansi concentrate"
+   * "1/4 teaspoon vanilla extract"
+   * "1.5 oz gin"
+   */
+  NUMERIC:       /<li>([\d½⅓⅔¼¾⅕⅖⅗⅘⅙⅚⅐⅛⅜⅝⅞/ .-]+(?:(?:to|-) \d+)?)(.*)<\/li>/
 };
 /* eslint-enable key-spacing */
 

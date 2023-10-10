@@ -14,7 +14,7 @@
 
 .ingredient--amt {
   display: inline-block;
-  min-width: 1.8em;
+  min-width: 2.5em;
   padding-right: .2em;
   white-space: nowrap;
 }
