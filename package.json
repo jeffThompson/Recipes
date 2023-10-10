@@ -1,0 +1,15 @@
+{
+  "name": "recipe",
+  "version": "1.0.0",
+  "description": "A super minimal recipe website – great for keeping track of family recipes, mods to ones you find online, or have created yourself!",
+  "main": "build.js",
+  "scripts": {
+    "build": "node ./build.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "eslint": "^8.51.0",
+    "showdown": "^2.1.0"
+  }
+}

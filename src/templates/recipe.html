@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Recipe Book</title>
+
+    <!-- basics -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel="icon" type="image/png" href="http://www.jeffreythompson.org/graphics/favicon.png">
+
+    <!-- font and styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,700,700i,900,900i">
+		<link rel="stylesheet" href="styles/stylesheet.css">
+  </head>
+  <body>
+    <main class="wrapper recipe">
+      <!-- back button -->
+      <!-- icon via: https://fontawesome.com/icons/arrow-left -->
+      <p id="back">
+        <a href="index.html">
+          <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path fill="currentColor" d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z" />
+          </svg>
+        </a>
+      </p>
+
+      <!-- recipe -->
+      <article>
+        <section class="section section--heroimage">{{__heroImg__}}</section>
+        <hgroup class="section section--title">
+          <h1>{{__title__}}</h1>
+        </hgroup>
+        <section class="section section--info">{{__info__}}</section>
+        <section class="section section--ingredients">{{__ingredients__}}</section>
+        <section class="section section--steps" id="steps">{{__steps__}}</section>
+        <hr />
+        <section class="section section--notes">{{__notes__}}</section>
+        <section class="section section--help">{{__help__}}</section>
+        <section class="section section--basedon">{{__basedon__}}</section>
+      </article>
+    </main>
+    <script src="scripts/recipe.js"></script>
+  </body>
+</html>

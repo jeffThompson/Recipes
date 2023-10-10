@@ -1,0 +1,64 @@
+{
+    "env": {
+      "es6": true,
+      "jest": true,
+      "node": true
+    },
+    "extends": "eslint:recommended",
+    "globals": {
+      "jsdom": true
+    },
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "ecmaFeatures": {
+        "experimentalObjectRestSpread": true
+      }
+    },
+    "rules": {
+      "array-bracket-spacing": ["error", "never", { "objectsInArrays": false }],
+      "arrow-body-style": ["warn", "as-needed"],
+      "arrow-parens": ["error", "as-needed", { "requireForBlockBody": true }],
+      "block-spacing": "warn",
+      "brace-style": ["error", "1tbs"],
+      "callback-return": "error",
+      "comma-dangle": ["error", "only-multiline"],
+      "curly": ["error", "all"],
+      "dot-notation": "error",
+      "eqeqeq": "error",
+      "indent": ["warn", 2, { "SwitchCase": 1 }],
+      "key-spacing": ["error", { "beforeColon": false, "afterColon": true }],
+      "keyword-spacing": "error",
+      "no-console": ["warn", { "allow": ["warn"] }],
+      "no-empty": "error",
+      "no-eval": "error",
+      "no-extend-native": "error",
+      "no-spaced-func": "error",
+      "no-trailing-spaces": "warn",
+      "no-undef": "error",
+      "no-unused-vars": "warn",
+      "no-use-before-define": ["error", { "functions": false }],
+      "no-var": "warn",
+      "object-shorthand": ["warn", "always"],
+      "one-var": ["warn", { "initialized": "never" }],
+      "prefer-arrow-callback": "warn",
+      "prefer-const": "warn",
+      "quote-props": ["error", "as-needed"],
+      "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+      "semi": "error",
+      "space-before-function-paren": ["error", { "anonymous": "always", "named": "never", "asyncArrow": "always" }],
+      "space-in-parens": ["error", "never"],
+      "space-infix-ops": "error",
+      "space-unary-ops": ["error", { "words": false, "nonwords": false }],
+      "spaced-comment": ["warn", "always"],
+      "strict": ["error", "never"],
+      "wrap-iife": ["error", "any"]
+    },
+    "overrides": [{
+      "files":[
+        "*.test.js"
+      ],
+      "rules": {
+        "no-underscore-dangle": "off"
+      }
+    }]
+  }
