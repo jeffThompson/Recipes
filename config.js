@@ -10,7 +10,7 @@ const yelpLocation = 'Bloomfield, NJ'; // no need for fancy formatting, just do 
 */
 module.exports = {
   imageDir: './images',
-  outputDir: './.dist',
+  outputDir: './output',
   recipeDir: './recipes/',
 
   // siteDomain: 'localhost',

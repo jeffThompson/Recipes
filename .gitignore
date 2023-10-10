@@ -2,4 +2,4 @@ _*/
 .dist
 .DS_Store
 node_modules
-recipes/_*
+output

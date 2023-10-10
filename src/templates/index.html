@@ -9,14 +9,15 @@
   <!-- font and styles -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,700,700i,900">
   <link rel="stylesheet" href="styles/stylesheet.css">
+  <link rel="stylesheet" href="styles/recipesIndex.css">
 </head>
 <body>
   <main class="wrapper index">
     <!-- table of contents -->
-    <section id="toc">
-      <h1 id="mainTitle">Recipe Book</h1>
-      <nav>
-        <p id="navigation">{{__letters-index__}}</p>
+    <section class="toc">
+      <h1 class="mainTitle">Recipe Book</h1>
+      <nav class="navigation">
+        {{__letters-index__}}
       </nav>
       <!-- your recipes will go here -->
       <ul>
@@ -24,7 +25,7 @@
       </ul>
     </section>
     <!-- footer -->
-    <footer id="footer">
+    <footer class="footer">
       <ul>
         <li>A super minimal recipe website by <a href="http://www.jeffreythompson.org">Jeff Thompson</a></li>
         <li><a href="https://github.com/jeffThompson/Recipes">Source code
