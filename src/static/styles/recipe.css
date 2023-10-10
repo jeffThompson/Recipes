@@ -1,7 +1,35 @@
+:root {
+  --accent-color: #c15900;
+  --light-gray-color: rgb(129 129 129);
+}
+
 .paren {
-  color: rgb(170, 170, 170);
+  color: var(--light-gray-color);
   font-style: italic;
 }
+
+.ingredient--align {
+  display: flex;
+}
+
+.ingredient--amt {
+  display: inline-block;
+  min-width: 2.5em;
+  padding-right: .2em;
+  white-space: nowrap;
+}
+
+/*
+.ingredient--text {
+}
+*/
+
+hr {
+  clear: both;
+  border: none;
+  border-top: 1px solid var(--light-gray-color);
+}
+
 
 .back-link {
   margin-top: -0.6em;
@@ -32,7 +60,7 @@ svg.linkIcon {
 /* h/t @mpember for the pr suggestion */
 .section--heroimage img {
   width: 100%;
-  border: 1px solid rgb(200, 200, 200);
+  border-bottom: 2px solid var(--accent-color);
 }
 
 /* section dividers */
@@ -42,6 +70,10 @@ svg.linkIcon {
 
 .section--info h2 {
   display: none;
+}
+
+.section--ingredients {
+  /* font-size: 13px; */
 }
 
 .section--ingredients li::first-letter,
@@ -72,8 +104,44 @@ svg.linkIcon {
   margin-left: 1em;
 }
 
+.section--steps {
+  /* font-size: 14px; */
+}
+
+.section--steps ol {
+  list-style-type: none; /* Remove default numbers */
+  counter-reset: my-counter; /* Reset the counter for custom numbering */
+}
+
+.section--steps li {
+  margin-bottom: .97em;
+  position: relative;
+}
+
+.section--steps ol li:before {
+  content: counter(my-counter);
+  counter-increment: my-counter;
+  color: var(--accent-color);
+  font-weight: 800;
+  margin-right: -3px;
+  font-size: 119%;
+  position: relative;
+  left: -13px;
+  top: -2px;
+}
+
 .section--notes ul li {
   margin-bottom: 0.4em;
+}
+
+.section--steps h3,
+.section--ingredients h3 {
+  color: var(--accent-color);
+  margin-bottom: .6em;
+}
+
+.section--ingredients ul + h3 {
+  margin-top: 1.8em;
 }
 
 /* notes links should have an underline */

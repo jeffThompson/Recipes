@@ -11,7 +11,7 @@ const yelpLocation = 'Bloomfield, NJ'; // no need for fancy formatting, just do 
 module.exports = {
   imageDir: './images',
   outputDir: './output',
-  recipeDir: './recipes/',
+  recipeDir: './recipes',
 
   // siteDomain: 'localhost',
   titleSuffix: ' - Recipe Book',

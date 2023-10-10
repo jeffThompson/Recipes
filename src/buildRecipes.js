@@ -14,6 +14,10 @@ const SectionTypes = {
   STEPS:          'steps',
 };
 
+const SectionAliases = {
+  [SectionTypes.STEPS]: ['directions', 'instructions', 'preparation', 'procedure', 'procedures'],
+  [SectionTypes.NOTES]: ['tips'],
+};
 
 const Substitutions = {
   BASED_ON:       `{{__${SectionTypes.BASED_ON}__}}`,
@@ -30,31 +34,72 @@ const Styles = {
   HELP_LINK:      'help-link',
   HERO_IMG:       'hero-img',
   PAREN:          'paren',
+
+  HAS_NUMERIC:    'ingredient--align',
+  NUMERIC:        'ingredient--amt',
+  UNITS:          'ingredient--text',
 };
 
 const RegExes = {
-  SPLIT_AT_HEADINGS: /(?=<h[1-6])/,
+  SECTION_SPLIT: /(?=<h[12])/,
 
-  TITLE:             /<h1(?:\s+id=".*?")?>(.*?)<\/h1>/i,
-  H2:                /<h2 id="(.+?)">(.+?)<\/h2>/,
-  LI:                /<li>(.|\n)+?<\/li>/gm,
+  TITLE:         /<h1(?:\s+id=".*?")?>(.*?)<\/h1>/i,
+  H2:            /<h2 id="(.+?)">(.+?)<\/h2>/,
+  LI:            /<li>(.|\n)+?<\/li>/gm,
 
-  PAGE_TITLE:        /<title>.*?<\/title>/,
+  PAGE_TITLE:    /<title>.*?<\/title>/,
 
-  PARENS:            /\(([^)]+)\)/g,
+  PARENS:        /\(([^)]+)\)/g,
+  /**
+   * @example
+   * "1 3/4 - 2 cups graham cracker crumbs"
+   * "1 to 2 tablespoons lemon juice"
+   * "½ cup calamansi concentrate"
+   * "1/4 teaspoon vanilla extract"
+   * "1.5 oz gin"
+   */
+  NUMERIC:       /<li>([\d½⅓⅔¼¾⅕⅖⅗⅘⅙⅚⅐⅛⅜⅝⅞/ .-]+(?:(?:to|-) \d+)?)(.*)<\/li>/
 };
 /* eslint-enable key-spacing */
 
 const LINK_SUB_NAME = '<name>';
 
-function hasImage(imagesPath, name) {
+function getSectionType(section) {
+  const matches = section.match(RegExes.H2);
+  if (!matches) {
+    return '';
+  }
+
+  const type = matches[1].toLowerCase();
+  if (Object.keys(SectionTypes).some(key => SectionTypes[key] === type)) {
+    return type;
+  }
+
+  const aliasType = Object.keys(SectionAliases).find(key => SectionAliases[key].includes(type));
+  return aliasType || type;
+}
+
+function hasImage(imagesPath, name, ext) {
   // TODO: let's do more image filetypes: jpg, jpeg, png, webp
   try {
-    accessSync(resolve(imagesPath, `${name}.jpg`), F_OK);
+    accessSync(resolve(imagesPath, `${name}.${ext}`), F_OK);
     return true;
   } catch (err) {
     return false;
   }
+}
+
+function getImageType(imagesPath, name) {
+  if (hasImage(imagesPath, name, 'jpg')) {
+    return 'jpg';
+  }
+  if (hasImage(imagesPath, name, 'png')) {
+    return 'png';
+  }
+  if (hasImage(imagesPath, name, 'webp')) {
+    return 'webp';
+  }
+  return null;
 }
 
 // create-recipe.js:
@@ -88,6 +133,13 @@ function prettyInfoSection(section) {
   return section;
 }
 
+function prettyIngredientsSection(section) {
+  return section.replace(RegExes.LI, str => str
+    .replace(RegExes.NUMERIC, `<li class="${Styles.HAS_NUMERIC}"><span class="${Styles.NUMERIC}">$1</span><span class="${Styles.UNITS}">$2</span></li>`)
+    .replace(RegExes.PARENS, `<span class="${Styles.PAREN}">($1)</span>`)
+  );
+}
+
 function getHelpSection(helpURLs, name) {
   const recipeName = name.replace(' ', '+');
   const links = helpURLs.map(({ label, url }) => `<li><a class=${Styles.HELP_LINK} href="${url.replace(LINK_SUB_NAME, recipeName)}" target="blank">${label}</a></li>`);
@@ -102,7 +154,7 @@ function writeRecipe(recipeTemplate, converter, config, path, name) {
   const { outputPath, imagesPath, autoUrlSections, titleSuffix, includeHelpLinks, shortenURLs, helpURLs, lookForHeroImage } = config;
   const markdown = readFileSync(path, { encoding: 'utf8' });
   const recipe = converter.makeHtml(markdown);
-  const sections = recipe.split(RegExes.SPLIT_AT_HEADINGS);
+  const sections = recipe.split(RegExes.SECTION_SPLIT);
 
   let htmlOutput = recipeTemplate;
   const m = recipe.match(RegExes.TITLE);
@@ -112,8 +164,9 @@ function writeRecipe(recipeTemplate, converter, config, path, name) {
     .replace(Substitutions.TITLE, recipeName);
 
   // if there's a hero image available, load and display
-  if (lookForHeroImage && hasImage(imagesPath, name)) {
-    htmlOutput = htmlOutput.replace(Substitutions.HERO_IMG, `<img class=${Styles.HERO_IMG} src="../images/${name}.jpg">`);
+  const heroExt = lookForHeroImage && getImageType(imagesPath, name);
+  if (heroExt) {
+    htmlOutput = htmlOutput.replace(Substitutions.HERO_IMG, `<img class=${Styles.HERO_IMG} src="../images/${name}.${heroExt}">`);
   }
 
   // add some helper links
@@ -123,11 +176,7 @@ function writeRecipe(recipeTemplate, converter, config, path, name) {
 
   // iterate sections, add to body
   sections.forEach((section) => {
-    const matches = section.match(RegExes.H2);
-    if (!matches) {
-      return;
-    }
-    const sectionType  = matches[1];
+    const sectionType = getSectionType(section);
     // const sectionName  = matches[2];
     if (autoUrlSections.includes(sectionType)) {
       section = linkify(section);
@@ -144,7 +193,7 @@ function writeRecipe(recipeTemplate, converter, config, path, name) {
       case SectionTypes.INGREDIENTS:
         // in the ingredients, make things in parentheses a
         // bit lighter
-        section = section.replace(RegExes.LI, str => str.replace(RegExes.PARENS, `<span class="${Styles.PAREN}">($1)</span>`));
+        section = prettyIngredientsSection(section);
         break;
       case SectionTypes.INFO:
         // in info, add labels to time/quantity

@@ -144,9 +144,10 @@ table {
 html,
 body {
   background-color: white;
-
-  font-family: 'Fira Sans', sans-serif;
-  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-smooth: 2em;
+  font-weight: 300;
 }
 
 strong {
@@ -159,19 +160,21 @@ em {
 
 /* recipe title */
 h1 {
-  font-size: 2.5em;
-  font-weight: 900;
-  text-transform: uppercase;
+  color: #c15900;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: 2fpt;
+  font-weight: 600;
   margin-top: 1em;
+  text-transform: uppercase;
 }
 
 /* section headers */
 h2 {
+  font-family: 'PT Sans Narrow', sans-serif;
   font-size: 1.5em;
-  font-weight: 700;
-  text-transform: uppercase;
-
+  font-weight: 400;
   margin-bottom: 0.6em;
+  text-transform: uppercase;
 }
 
 /* all other text */
@@ -217,14 +220,8 @@ a:hover {
 /* specific sections/objects */
 .wrapper {
   width: 90%;
-  max-width: 700px;
+  max-width: 900px;
   margin: 1em auto 4em auto;
-}
-
-hr {
-  clear: both;
-  border: none;
-  border-top: 1px solid gray;
 }
 
 /* larger screen: ingredients and steps as two columns */
@@ -234,7 +231,7 @@ hr {
   }
 
   h1 {
-    font-size: 3em;
+    font-size: 28pt;
     margin-top: 0;
   }
 
