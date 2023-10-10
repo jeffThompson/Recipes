@@ -15,7 +15,8 @@ const SectionTypes = {
 };
 
 const SectionAliases = {
-  [SectionTypes.STEPS]: ['procedure', 'procedures', 'instructions', 'directions'],
+  [SectionTypes.STEPS]: ['directions', 'instructions', 'preparation', 'procedure', 'procedures'],
+  [SectionTypes.NOTES]: ['tips'],
 };
 
 const Substitutions = {
