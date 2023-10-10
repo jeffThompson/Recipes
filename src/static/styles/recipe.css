@@ -1,0 +1,172 @@
+.paren {
+  color: rgb(170, 170, 170);
+  font-style: italic;
+}
+
+.back-link {
+  margin-top: -0.6em;
+  margin-bottom: 0.6em;
+  font-style: normal;
+}
+
+.back-link a:hover {
+  background: none;
+}
+
+.back-link svg {
+  display: none;
+  width: 24px;
+  color: rgb(200, 200, 200);
+}
+
+.back-link svg:hover {
+  color: black;
+}
+
+svg.linkIcon {
+  width: 14px;
+  margin-left: 0.3em;
+}
+
+/* images full width */
+/* h/t @mpember for the pr suggestion */
+.section--heroimage img {
+  width: 100%;
+  border: 1px solid rgb(200, 200, 200);
+}
+
+/* section dividers */
+.section {
+  margin-bottom: 2em;
+}
+
+.section--info h2 {
+  display: none;
+}
+
+.section--ingredients li::first-letter,
+.section--steps li::first-letter,
+.section--notes li::first-letter,
+#time::first-letter,
+#makes::first-letter {
+  text-transform: uppercase;
+}
+
+.section--ingredients p,
+.section--steps p,
+.section--notes p,
+.section--basedon p {
+  font-weight: 700;
+  margin: 1.1em 0 0.6em 0;
+}
+
+.section--notes ul,
+.section--help ul,
+.section--basedon ul {
+  list-style: square outside;
+}
+
+.section--notes ul li,
+.section--help ul li,
+.section--basedon ul li {
+  margin-left: 1em;
+}
+
+.section--notes ul li {
+  margin-bottom: 0.4em;
+}
+
+/* notes links should have an underline */
+.section--notes a {
+  text-decoration: underline;
+}
+
+/* make sure long urls split at slashes */
+.section--basedon a {
+  white-space: pre-wrap;
+  /* css-3 */
+  white-space: -moz-pre-wrap;
+  /* mozilla, since 1999 */
+  white-space: -pre-wrap;
+  /* opera 4-6 */
+  white-space: -o-pre-wrap;
+  /* opera 7 */
+  word-wrap: break-word;
+  /* ie 5.5+ */
+}
+
+.section--title {
+  text-align: center;
+  padding-bottom: 1.3em;
+  border-bottom: 1px solid gray;
+}
+
+.section--info li {
+  margin-left: 4em;
+  text-indent: -2em;
+  margin-bottom: 0.6em;
+}
+
+#time,
+#makes {
+  display: inline-block;
+  width: 2em;
+  font-weight: 700;
+}
+
+.highlight {
+  background-color: rgba(255, 255, 0, 0.5);
+}
+
+@media screen and (min-width: 820px) {
+  .section--help ul {
+    column-count: 2;
+    -webkit-column-gap: 4em;
+    -moz-column-gap: 4em;
+    column-gap: 4em;
+  }
+
+  .back-link {
+    margin-bottom: 1.3em;
+  }
+
+  .back-link svg {
+    display: block;
+  }
+
+  .section--title {
+    text-align: left;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .section--ingredients,
+  .section--steps {
+    float: left;
+  }
+
+  .section--ingredients {
+    width: 33%;
+    padding-right: 2em;
+  }
+
+  .section--ingredients li {
+    margin-bottom: 0.4em;
+  }
+
+  .section--steps {
+    width: 66%;
+  }
+}
+
+/* print is not dead */
+@media print {
+  .section--title {
+    text-align: left !important;
+  }
+
+  .back-link,
+  .section--help {
+    display: none;
+  }
+}

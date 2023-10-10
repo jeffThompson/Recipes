@@ -1,0 +1,62 @@
+.mainTitle {
+  text-align: center;
+}
+
+.toc ul {
+  margin-top: 1em;
+}
+
+.toc li {
+  text-transform: capitalize;
+  margin-left: 1em;
+  margin-bottom: 1em;
+
+  /* avoid splitting a single item into cols */
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid-column;
+}
+
+.navigation {
+  max-width: 500px;
+  margin: 0.7em auto 2.6em auto;
+  line-height: 1.7em;
+  text-align: center;
+}
+
+.navigation a {
+  margin-right: 1.1em;
+  color: rgb(180, 180, 180);
+}
+
+.footer {
+  color: rgb(170, 170, 170);
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.footer li {
+  margin-bottom: 0.6em;
+}
+
+.footer a,
+.footer a:link,
+.footer a:visited {
+  color: rgb(180, 180, 180);
+}
+
+.footer svg {
+  width: 14px;
+  margin-left: 0.3em;
+}
+
+/* larger screen: ingredients and steps as two columns */
+@media screen and (min-width: 820px) {
+  .toc ul  {
+    column-count: 2;
+    -webkit-column-gap: 4em;
+    -moz-column-gap: 4em;
+    column-gap: 4em;
+  }
+}

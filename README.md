@@ -2,9 +2,12 @@
 
 A super minimal recipe website – great for keeping track of family recipes, mods to ones you find online, or have created yourself!
 
+> **Note:** *This fork is a NodeJs port of Jeffrey Thompson's PHP Recipes project*
+
 **See it in action here: [jeffreythompson.org/recipes](http://jeffreythompson.org/recipes)**
 
-Features:
+### Features:
+
 * Recipes in a simple [Markdown format](https://daringfireball.net/projects/markdown), just dump them in a folder and upload  
 * List of recipes will auto-populate with quick alpha links at the top  
 * Each recipe is displayed in a nice, clean format designed for use while cooking or at the grocery store – no extra 💩 or ads  
@@ -19,6 +22,21 @@ Features:
 * [Other options](#other-options)
 * [Suggestions welcome!](#suggestions-welcome)
 
+### Installation
+
+After cloning this repo:
+
+```sh
+npm install
+```
+
+Add your files to the `/recipes` directory, your images (optional) to `/images` and run:
+
+```sh
+npm run build
+```
+
+By default the converted HTML files will be in the `/output` directory. See the `config.js` file for options.
 
 ## RECIPE FORMAT  
 In order to show up properly, your recipe's Markdown file should be named with dashes in place of spaces (ex: `rice-pilaf.md` or `saag-paneer.md`). This will be used to populate your list of recipes on the main page.
@@ -74,14 +92,16 @@ A delicious light-red drink perfect for winter gatherings!
 
 You can optionally include info about how long the recipe takes and how many servings it makes. Put this before the `Ingredients` list:  
 
-```## info  
+```markdown
+## info  
 * Takes about 90 minutes  
 * Enough for a large biryani or a full-sized curry
 ```
 
 The `Ingredients` and `Steps` sections can be split with subheaders too:
 
-```## steps
+```markdown
+## steps
 1. Soak urad dal for 4 hours to overnight, drain  
 2. Grind in blender until a smooth and thick paste (add a little water if necessary)  
 3. Put in mixing bowl and whip with hands for 2-3 minutes until fluffy  
@@ -95,18 +115,19 @@ To fry:
 ```
 
 ## ADDING IMAGES  
+
 Thanks to a suggestion from @mpember, if you have a `jpg` image with the same filename as your recipe, it will automatically be added! 
 
 For example: `aloo-matar.md` should have an image called `aloo-matar.jpg` in the `images` folder.
 
 You can also include other images in the recipe using Markdown's image syntax: `![alt text](url)`. You'll probably want to update the stylesheet to size them appropriately.
 
-
 ## OTHER OPTIONS  
-The `recipe.php` file also includes some more options you can customize:
+
+The `recipe.html` template file also includes some more options you can customize:
 
 * `yelpLocation`: the city/state where you're located to make Yelp searches easier! No need for fancy formatting, this will work fine: `Minneapolis MN`  
-* `helpUrls`: dictionary with the `label` (text displayed) and `url` in template form. The string `<name>` will be replaced with your recipe's name  
+* `helpURLs`: dictionary with the `label` (text displayed) and `url` in template form. The string `<name>` will be replaced with your recipe's name  
 * `lookForHeroImage`: on by default, but you can turn it off if you never intend to include hero images  
 * `autoUrlSections`: list of sections in the recepe template where you want raw URLs (ex: www.instagram.com) to be turned into real links. Great for the `Based On` section but not so good if you want to include Markdown-formatted links in other sections  
 * `shortenUrls`: turns a super-long url into just the main domain name (link will still work as normal, just less cluttered). Off by default but exists if you want it
@@ -114,4 +135,3 @@ The `recipe.php` file also includes some more options you can customize:
 
 ## SUGGESTIONS WELCOME  
 If you have suggestions for improving this project, please let me know! Either [open an issue](https://github.com/jeffThompson/Recipes/issues/new) or send me an email.
-

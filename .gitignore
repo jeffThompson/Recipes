@@ -1,3 +1,5 @@
-.DS_Store
 _*/
-recipes/_*
+.dist
+.DS_Store
+node_modules
+output

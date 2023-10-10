@@ -1,0 +1,38 @@
+{
+  "name": "recipes-nodejs",
+  "version": "1.0.0",
+  "description": "A super minimal recipe website – great for keeping track of family recipes, mods to ones you find online, or have created yourself!",
+  "main": "build.js",
+  "scripts": {
+    "build": "node ./build.js"
+  },
+  "author": "Jeff Thompson",
+  "contributors": [
+    "B.Carter <buzcarter@gmail.com>",
+    "Jeff Thompson <mail@jeffreythompson.org>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "eslint": "^8.51.0",
+    "showdown": "^2.1.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buzcarter/recipes-nodejs.git"
+  },
+  "keywords": [
+    "baking",
+    "cooking",
+    "recipes",
+    "recipe",
+    "index",
+    "kitchen",
+    "ingredients",
+    "instructions"
+  ],
+  "bugs": {
+    "url": "https://github.com/buzcarter/recipes-nodejs/issues"
+  },
+  "homepage": "https://github.com/buzcarter/recipes-nodejs#readme"
+}
