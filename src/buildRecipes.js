@@ -103,7 +103,6 @@ function getImageType(imagesPath, name) {
   return null;
 }
 
-// create-recipe.js:
 /*
   // link icon svg code
   // via: https://fontawesome.com/icons/external-link-alt
@@ -151,8 +150,8 @@ function getHelpSection(helpURLs, name) {
 `;
 }
 
-function writeRecipe(recipeTemplate, converter, config, path, name) {
-  const { outputPath, imagesPath, autoUrlSections, titleSuffix, includeHelpLinks, shortenURLs, helpURLs, lookForHeroImage } = config;
+function convertRecipe(recipeTemplate, converter, config, path, name) {
+  const { imagesPath, autoUrlSections, titleSuffix, includeHelpLinks, shortenURLs, helpURLs, lookForHeroImage } = config;
   const markdown = readFileSync(path, { encoding: 'utf8' });
   const recipe = converter.makeHtml(markdown);
   const sections = recipe.split(RegExes.SECTION_SPLIT);
@@ -207,14 +206,17 @@ function writeRecipe(recipeTemplate, converter, config, path, name) {
 
   // clean-up unused sections
   Object.keys(Substitutions).forEach(word => htmlOutput = htmlOutput.replace(Substitutions[word], ''));
-
-  writeFile(resolve(outputPath, `${name}.html`), htmlOutput, { encoding: 'utf8'}, () => null);
+  return htmlOutput;
 }
 
 function buildRecipes(recipeTemplate, options, fileList) {
+  const { outputPath } = options;
+
   const converter = new showdown.Converter();
+
   fileList.forEach(({ file: path, name }) => {
-    writeRecipe(recipeTemplate, converter, options, path, name);
+    const html = convertRecipe(recipeTemplate, converter, options, path, name);
+    writeFile(resolve(outputPath, `${name}.html`), html, { encoding: 'utf8'}, () => null);
   });
 
 }

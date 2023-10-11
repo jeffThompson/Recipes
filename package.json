@@ -30,13 +30,18 @@
   },
   "keywords": [
     "baking",
+    "conversion",
     "cooking",
-    "recipes",
-    "recipe",
     "index",
-    "kitchen",
     "ingredients",
-    "instructions"
+    "instructions",
+    "kitchen",
+    "markdown",
+    "node",
+    "publish",
+    "recipe",
+    "recipes",
+    "static"
   ],
   "bugs": {
     "url": "https://github.com/buzcarter/recipes-nodejs/issues"
