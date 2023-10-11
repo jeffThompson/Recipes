@@ -51,6 +51,7 @@ const RegExes = {
 
   PARENS:        /\(([^)]+)\)/g,
   /**
+   * Watch from "-" v. "–" (em-dash)
    * @example
    * "1 3/4 - 2 cups graham cracker crumbs"
    * "1 to 2 tablespoons lemon juice"
@@ -58,7 +59,7 @@ const RegExes = {
    * "1/4 teaspoon vanilla extract"
    * "1.5 oz gin"
    */
-  NUMERIC:       /<li>([\d½⅓⅔¼¾⅕⅖⅗⅘⅙⅚⅐⅛⅜⅝⅞/ .-]+(?:(?:to|-) \d+)?)(.*)<\/li>/
+  NUMERIC:       /<li>(~?[\d½⅓⅔¼¾⅕⅖⅗⅘⅙⅚⅐⅛⅜⅝⅞/ ."–-]+(?:(?:to|-) \d+)?)\s+(.*)<\/li>/
 };
 /* eslint-enable key-spacing */
 
@@ -135,7 +136,7 @@ function prettyInfoSection(section) {
 
 function prettyIngredientsSection(section) {
   return section.replace(RegExes.LI, str => str
-    .replace(RegExes.NUMERIC, `<li class="${Styles.HAS_NUMERIC}"><span class="${Styles.NUMERIC}">$1</span><span class="${Styles.UNITS}">$2</span></li>`)
+    .replace(RegExes.NUMERIC, `<li class="${Styles.HAS_NUMERIC}"><span class="${Styles.NUMERIC}">$1</span> <span class="${Styles.UNITS}">$2</span></li>`)
     .replace(RegExes.PARENS, `<span class="${Styles.PAREN}">($1)</span>`)
   );
 }
@@ -218,4 +219,10 @@ function buildRecipes(recipeTemplate, options, fileList) {
 
 }
 
-module.exports = buildRecipes;
+module.exports = {
+  __test__: {
+    prettyIngredientsSection,
+    NumericRegEx: RegExes.NUMERIC,
+  },
+  buildRecipes,
+};
