@@ -218,4 +218,10 @@ function buildRecipes(recipeTemplate, options, fileList) {
 
 }
 
-module.exports = buildRecipes;
+module.exports = {
+  __test__: {
+    prettyIngredientsSection,
+    NumericRegEx: RegExes.NUMERIC,
+  },
+  buildRecipes,
+};

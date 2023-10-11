@@ -1,7 +1,7 @@
 const { basename, extname, resolve } = require('path');
 const { cpSync, readdirSync, readFileSync, rmSync, mkdirSync } = require('fs');
 
-const buildRecipes = require('./src/buildRecipes');
+const { buildRecipes } = require('./src/buildRecipes');
 const buildRecipeIndex = require('./src/buildRecipeIndex');
 const configs = require('./config');
 

@@ -6,7 +6,10 @@
   "scripts": {
     "build": "node ./build.js",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix ."
+    "lint:fix": "eslint --fix .",
+    "test": "jest --silent --config .jest/jest.config.js",
+    "test:watch": "npm test -- --watch",
+    "test:cover": "npm test -- --coverage"
   },
   "author": "Buz Carter",
   "contributors": [
@@ -18,7 +21,9 @@
     "eslint": "^8.51.0",
     "showdown": "^2.1.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/buzcarter/recipes-nodejs.git"
