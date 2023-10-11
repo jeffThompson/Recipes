@@ -48,14 +48,14 @@ describe('buildRecipes', () => {
 `;
       const expectedResult = `
 <ul>
-<li class="ingredient--align"><span class="ingredient--amt">6 </span><span class="ingredient--text">tablespoons/85 grams unsalted butter</span></li>
+<li class="ingredient--align"><span class="ingredient--amt">6</span> <span class="ingredient--text">tablespoons/85 grams unsalted butter</span></li>
 <li>salt</li>
-<li class="ingredient--align"><span class="ingredient--amt">1/2 </span><span class="ingredient--text">cup sweetened shredded coconut</span></li>
-<li class="ingredient--align"><span class="ingredient--amt">1 </span><span class="ingredient--text">large orange</span></li>
+<li class="ingredient--align"><span class="ingredient--amt">1/2</span> <span class="ingredient--text">cup sweetened shredded coconut</span></li>
+<li class="ingredient--align"><span class="ingredient--amt">1</span> <span class="ingredient--text">large orange</span></li>
 <li>dash of white whine</li>
-<li class="ingredient--align"><span class="ingredient--amt">1 </span><span class="ingredient--text">can sweetened condensed milk</span></li>
-<li class="ingredient--align"><span class="ingredient--amt">½ </span><span class="ingredient--text">cup/120 milliliters calamansi</span></li>
-<li class="ingredient--align"><span class="ingredient--amt">1 </span><span class="ingredient--text">tablespoons lemon zest</span></li>
+<li class="ingredient--align"><span class="ingredient--amt">1</span> <span class="ingredient--text">can sweetened condensed milk</span></li>
+<li class="ingredient--align"><span class="ingredient--amt">½</span> <span class="ingredient--text">cup/120 milliliters calamansi</span></li>
+<li class="ingredient--align"><span class="ingredient--amt">1</span> <span class="ingredient--text">tablespoons lemon zest</span></li>
 </ul>
 `;
 
@@ -71,49 +71,53 @@ describe('buildRecipes', () => {
       },
       {
         input: '4 egg yolks',
-        expectedResult: 'amount: 4 , name: egg yolks',
+        expectedResult: 'amount: 4, name: egg yolks',
       },
       {
         input: '6    egg yolks',
-        expectedResult: 'amount: 6    , name: egg yolks',
+        expectedResult: 'amount: 6   , name: egg yolks',
+      },
+      {
+        input: '~6\tegg yolks',
+        expectedResult: 'amount: ~6, name: egg yolks',
       },
       {
         input: '1 3/4 - 2  egg yolks',
-        expectedResult: 'amount: 1 3/4 - 2  , name: egg yolks',
+        expectedResult: 'amount: 1 3/4 - 2 , name: egg yolks',
       },
       {
         input: '1/2  egg yolks',
-        expectedResult: 'amount: 1/2  , name: egg yolks',
+        expectedResult: 'amount: 1/2 , name: egg yolks',
       },
       {
         input: '1  (14-ounce) egg yolks',
-        expectedResult: 'amount: 1  , name: (14-ounce) egg yolks',
+        expectedResult: 'amount: 1 , name: (14-ounce) egg yolks',
       },
       {
         input: '½  egg yolks',
-        expectedResult: 'amount: ½  , name: egg yolks',
+        expectedResult: 'amount: ½ , name: egg yolks',
       },
       {
         input: '1 to 2  egg yolks',
-        expectedResult: 'amount: 1 to 2, name:   egg yolks',
+        expectedResult: 'amount: 1 to 2, name: egg yolks',
       },
       {
         input: '1 3/4 -2 ⅛ egg yolks',
-        expectedResult: 'amount: 1 3/4 -2 ⅛ , name: egg yolks',
+        expectedResult: 'amount: 1 3/4 -2 ⅛, name: egg yolks',
       },
       {
         input: '2- 3 1/3  egg yolks',
-        expectedResult: 'amount: 2- 3 1/3  , name: egg yolks',
+        expectedResult: 'amount: 2- 3 1/3 , name: egg yolks',
       },
       {
         input: '1.5 oz egg yolks',
-        expectedResult: 'amount: 1.5 , name: oz egg yolks',
+        expectedResult: 'amount: 1.5, name: oz egg yolks',
       }, {
         input: '3–4 whole chilies (em-dash)',
-        expectedResult: 'amount: 3, name: –4 whole chilies (em-dash)',
+        expectedResult: 'amount: 3–4, name: whole chilies (em-dash)',
       }, {
         input: '1" piece of ginger',
-        expectedResult: 'amount: 1, name: " piece of ginger',
+        expectedResult: 'amount: 1", name: piece of ginger',
       }];
 
       Tests.forEach(({ input, expectedResult }) => {
