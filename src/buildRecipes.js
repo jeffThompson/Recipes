@@ -116,8 +116,13 @@ function getImageType(imagesPath, name) {
   linkIcon += '</svg>';
   */
 
-function prettyBasedOnSection(section) {
+// eslint-disable-next-line no-unused-vars
+function prettyBasedOnSection(section, shortenURLs) {
+  // opt: remove cruft from 'based on' links
   /*
+  if (shortenURLs) {
+  }
+
   if (shortenURLs) {
     $('#basedon a').each(function () {
       let url = $(this).text();
@@ -166,7 +171,7 @@ function convertRecipe(recipeTemplate, converter, config, path, name) {
   // if there's a hero image available, load and display
   const heroExt = lookForHeroImage && getImageType(imagesPath, name);
   if (heroExt) {
-    htmlOutput = htmlOutput.replace(Substitutions.HERO_IMG, `<img class=${Styles.HERO_IMG} src="../images/${name}.${heroExt}">`);
+    htmlOutput = htmlOutput.replace(Substitutions.HERO_IMG, `<img class=${Styles.HERO_IMG} src="images/${name}.${heroExt}">`);
   }
 
   // add some helper links
@@ -187,10 +192,7 @@ function convertRecipe(recipeTemplate, converter, config, path, name) {
     // a few more bits to nicen things up...
     switch (sectionType) {
       case SectionTypes.BASED_ON:
-        // opt: remove cruft from 'based on' links
-        if (shortenURLs) {
-          section = prettyBasedOnSection(section);
-        }
+        section = prettyBasedOnSection(section, shortenURLs);
         break;
       case SectionTypes.HEADER:
         {
