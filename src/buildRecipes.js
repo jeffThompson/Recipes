@@ -7,8 +7,6 @@ const { linkify } = require('./utils');
 const SectionTypes = {
   BASED_ON:       'basedon',
   HEADER:         'header',
-  HELP:           'help',
-  HERO_IMG:       'heroImg',
   INFO:           'info',
   INGREDIENTS:    'ingredients',
   NOTES:          'notes',
@@ -24,12 +22,14 @@ const SectionAliases = {
 const Substitutions = {
   BASED_ON:       `{{__${SectionTypes.BASED_ON}__}}`,
   HEADER:         `{{__${SectionTypes.HEADER}__}}`,
-  HELP:           `{{__${SectionTypes.HELP}__}}`,
-  HERO_IMG:       `{{__${SectionTypes.HERO_IMG}__}}`,
   INFO:           `{{__${SectionTypes.INFO}__}}`,
   INGREDIENTS:    `{{__${SectionTypes.INGREDIENTS}__}}`,
   NOTES:          `{{__${SectionTypes.NOTES}__}}`,
   STEPS:          `{{__${SectionTypes.STEPS}__}}`,
+
+  // Substitions not driven by Recipe Sections (h1 or h2)
+  HELP:           '{{__help__}}',
+  HERO_IMG:       '{{__heroImg__}}',
   TITLE:          '{{__title__}}',
 };
 
@@ -160,67 +160,64 @@ function getHelpSection(helpURLs, name) {
 `;
 }
 
-function convertRecipe(recipeTemplate, converter, config, path, name) {
+function convertRecipe(outputHTML, recipeHTML, config, name) {
   const { imagesPath, autoUrlSections, titleSuffix, includeHelpLinks, shortenURLs, helpURLs, lookForHeroImage } = config;
-  const markdown = readFileSync(path, { encoding: 'utf8' });
-  const recipe = converter.makeHtml(markdown);
-  const sections = recipe.split(RegExes.SECTION_SPLIT);
 
-  let htmlOutput = recipeTemplate;
+  // iterate sections, add to body
+  recipeHTML
+    .split(RegExes.SECTION_SPLIT)
+    .forEach((section) => {
+      const sectionType = RegExes.TITLE.test(section)
+        ? SectionTypes.HEADER
+        : getSectionType(section);
+
+      if (autoUrlSections.includes(sectionType)) {
+        section = linkify(section);
+      }
+
+      // a few more bits to nicen things up...
+      switch (sectionType) {
+        case SectionTypes.BASED_ON:
+          section = prettyBasedOnSection(section, shortenURLs);
+          break;
+        case SectionTypes.HEADER:
+          {
+            const [, recipeName] = section.match(RegExes.TITLE);
+            section = section.replace(RegExes.TITLE, '');
+
+            outputHTML = outputHTML
+              .replace(RegExes.PAGE_TITLE, `<title>${recipeName}${titleSuffix || ''}</title>`)
+              .replace(Substitutions.TITLE, recipeName);
+          }
+          break;
+        case SectionTypes.INFO:
+        // in info, add labels to time/quantity
+          section = prettyInfoSection(section);
+          break;
+        case SectionTypes.INGREDIENTS:
+        // in the ingredients, make things in parentheses a
+        // bit lighter
+          section = prettyIngredientsSection(section);
+          break;
+      }
+
+      outputHTML = outputHTML.replace(`{{__${sectionType}__}}`, section);
+    });
 
   // if there's a hero image available, load and display
-  const heroExt = lookForHeroImage && getImageType(imagesPath, name);
-  if (heroExt) {
-    htmlOutput = htmlOutput.replace(Substitutions.HERO_IMG, `<img class=${Styles.HERO_IMG} src="images/${name}.${heroExt}">`);
+  const imgExtension = lookForHeroImage && getImageType(imagesPath, name);
+  if (imgExtension) {
+    outputHTML = outputHTML.replace(Substitutions.HERO_IMG, `<img class=${Styles.HERO_IMG} src="images/${name}.${imgExtension}">`);
   }
 
   // add some helper links
   if (includeHelpLinks && Array.isArray(helpURLs) && helpURLs.length) {
-    htmlOutput = htmlOutput.replace(Substitutions.HELP, getHelpSection(helpURLs, name));
+    outputHTML = outputHTML.replace(Substitutions.HELP, getHelpSection(helpURLs, name));
   }
 
-  // iterate sections, add to body
-  sections.forEach((section) => {
-    const sectionType = RegExes.TITLE.test(section)
-      ? SectionTypes.HEADER
-      : getSectionType(section);
-
-    if (autoUrlSections.includes(sectionType)) {
-      section = linkify(section);
-    }
-
-    // a few more bits to nicen things up...
-    switch (sectionType) {
-      case SectionTypes.BASED_ON:
-        section = prettyBasedOnSection(section, shortenURLs);
-        break;
-      case SectionTypes.HEADER:
-        {
-          const [, recipeName] = section.match(RegExes.TITLE);
-          section = section.replace(RegExes.TITLE, '');
-
-          htmlOutput = htmlOutput
-            .replace(RegExes.PAGE_TITLE, `<title>${recipeName}${titleSuffix || ''}</title>`)
-            .replace(Substitutions.TITLE, recipeName);
-        }
-        break;
-      case SectionTypes.INFO:
-        // in info, add labels to time/quantity
-        section = prettyInfoSection(section);
-        break;
-      case SectionTypes.INGREDIENTS:
-        // in the ingredients, make things in parentheses a
-        // bit lighter
-        section = prettyIngredientsSection(section);
-        break;
-    }
-
-    htmlOutput = htmlOutput.replace(`{{__${sectionType}__}}`, section);
-  });
-
   // clean-up unused sections
-  Object.keys(Substitutions).forEach(word => htmlOutput = htmlOutput.replace(Substitutions[word], ''));
-  return htmlOutput;
+  Object.keys(Substitutions).forEach(word => outputHTML = outputHTML.replace(Substitutions[word], ''));
+  return outputHTML;
 }
 
 function buildRecipes(recipeTemplate, options, fileList) {
@@ -229,7 +226,9 @@ function buildRecipes(recipeTemplate, options, fileList) {
   const converter = new showdown.Converter();
 
   fileList.forEach(({ file: path, name }) => {
-    const html = convertRecipe(recipeTemplate, converter, options, path, name);
+    const markdown = readFileSync(path, { encoding: 'utf8' });
+    let html = converter.makeHtml(markdown);
+    html = convertRecipe(recipeTemplate, html, options, name);
     writeFile(resolve(outputPath, `${name}.html`), html, { encoding: 'utf8'}, () => null);
   });
 
