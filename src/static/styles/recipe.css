@@ -72,9 +72,11 @@ svg.linkIcon {
   display: none;
 }
 
+/*
 .section--ingredients {
-  /* font-size: 13px; */
+  font-size: 13px;
 }
+*/
 
 .section--ingredients li::first-letter,
 .section--steps li::first-letter,
@@ -104,13 +106,15 @@ svg.linkIcon {
   margin-left: 1em;
 }
 
+/*
 .section--steps {
-  /* font-size: 14px; */
+  font-size: 14px;
 }
+*/
 
 .section--steps ol {
-  list-style-type: none; /* Remove default numbers */
-  counter-reset: my-counter; /* Reset the counter for custom numbering */
+  list-style-type: none;
+  counter-reset: my-counter;
 }
 
 .section--steps li {

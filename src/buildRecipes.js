@@ -6,6 +6,7 @@ const { linkify } = require('./utils');
 /* eslint-disable key-spacing */
 const SectionTypes = {
   BASED_ON:       'basedon',
+  HEADER:         'header',
   HELP:           'help',
   HERO_IMG:       'heroImg',
   INFO:           'info',
@@ -15,12 +16,14 @@ const SectionTypes = {
 };
 
 const SectionAliases = {
-  [SectionTypes.STEPS]: ['directions', 'instructions', 'preparation', 'procedure', 'procedures'],
-  [SectionTypes.NOTES]: ['tips'],
+  [SectionTypes.BASED_ON]: ['resources'],
+  [SectionTypes.NOTES]:    ['tips', 'variations'],
+  [SectionTypes.STEPS]:    ['directions', 'instructions', 'preparation', 'procedure', 'procedures'],
 };
 
 const Substitutions = {
   BASED_ON:       `{{__${SectionTypes.BASED_ON}__}}`,
+  HEADER:         `{{__${SectionTypes.HEADER}__}}`,
   HELP:           `{{__${SectionTypes.HELP}__}}`,
   HERO_IMG:       `{{__${SectionTypes.HERO_IMG}__}}`,
   INFO:           `{{__${SectionTypes.INFO}__}}`,
@@ -76,7 +79,9 @@ function getSectionType(section) {
     return type;
   }
 
-  const aliasType = Object.keys(SectionAliases).find(key => SectionAliases[key].includes(type));
+  const aliasType = Object.keys(SectionAliases)
+    .find(key => SectionAliases[key].includes(type));
+
   return aliasType || type;
 }
 
@@ -157,11 +162,6 @@ function convertRecipe(recipeTemplate, converter, config, path, name) {
   const sections = recipe.split(RegExes.SECTION_SPLIT);
 
   let htmlOutput = recipeTemplate;
-  const m = recipe.match(RegExes.TITLE);
-  const recipeName = m ? m[1] : name;
-  htmlOutput = htmlOutput
-    .replace(RegExes.PAGE_TITLE, `<title>${recipeName}${titleSuffix || ''}</title>`)
-    .replace(Substitutions.TITLE, recipeName);
 
   // if there's a hero image available, load and display
   const heroExt = lookForHeroImage && getImageType(imagesPath, name);
@@ -176,8 +176,10 @@ function convertRecipe(recipeTemplate, converter, config, path, name) {
 
   // iterate sections, add to body
   sections.forEach((section) => {
-    const sectionType = getSectionType(section);
-    // const sectionName  = matches[2];
+    const sectionType = RegExes.TITLE.test(section)
+      ? SectionTypes.HEADER
+      : getSectionType(section);
+
     if (autoUrlSections.includes(sectionType)) {
       section = linkify(section);
     }
@@ -190,14 +192,24 @@ function convertRecipe(recipeTemplate, converter, config, path, name) {
           section = prettyBasedOnSection(section);
         }
         break;
-      case SectionTypes.INGREDIENTS:
-        // in the ingredients, make things in parentheses a
-        // bit lighter
-        section = prettyIngredientsSection(section);
+      case SectionTypes.HEADER:
+        {
+          const [, recipeName] = section.match(RegExes.TITLE);
+          section = section.replace(RegExes.TITLE, '');
+
+          htmlOutput = htmlOutput
+            .replace(RegExes.PAGE_TITLE, `<title>${recipeName}${titleSuffix || ''}</title>`)
+            .replace(Substitutions.TITLE, recipeName);
+        }
         break;
       case SectionTypes.INFO:
         // in info, add labels to time/quantity
         section = prettyInfoSection(section);
+        break;
+      case SectionTypes.INGREDIENTS:
+        // in the ingredients, make things in parentheses a
+        // bit lighter
+        section = prettyIngredientsSection(section);
         break;
     }
 
