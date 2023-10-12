@@ -33,6 +33,10 @@ function copyStatic(staticPath, outputPath) {
   ['scripts', 'styles'].forEach(dir => cpSync(resolve(staticPath, dir), resolve(outputPath, dir), { recursive: true }));
 }
 
+function copyImages(imagesPath, outputPath) {
+  cpSync(imagesPath, resolve(outputPath, 'images'), { recursive: true });
+}
+
 function main(configs) {
   const options = {
     ...configs,
@@ -48,6 +52,7 @@ function main(configs) {
 
   setupOutputDir(options.outputPath);
   copyStatic(options.staticPath, options.outputPath);
+  copyImages(options.imagesPath, options.outputPath);
   buildRecipes(recipeTemplate, options, fileList);
   buildRecipeIndex(indexTemplate, options, fileList);
 

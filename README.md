@@ -103,6 +103,8 @@ The `Ingredients` and `Steps` sections can be split with subheaders too:
 
 ```markdown
 ## steps
+
+## Prep the dal mixture:
 1. Soak urad dal for 4 hours to overnight, drain  
 2. Grind in blender until a smooth and thick paste (add a little water if necessary)  
 3. Put in mixing bowl and whip with hands for 2-3 minutes until fluffy  

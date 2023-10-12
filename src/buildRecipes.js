@@ -6,6 +6,7 @@ const { linkify } = require('./utils');
 /* eslint-disable key-spacing */
 const SectionTypes = {
   BASED_ON:       'basedon',
+  HEADER:         'header',
   HELP:           'help',
   HERO_IMG:       'heroImg',
   INFO:           'info',
@@ -15,12 +16,14 @@ const SectionTypes = {
 };
 
 const SectionAliases = {
-  [SectionTypes.STEPS]: ['directions', 'instructions', 'preparation', 'procedure', 'procedures'],
-  [SectionTypes.NOTES]: ['tips'],
+  [SectionTypes.BASED_ON]: ['resources'],
+  [SectionTypes.NOTES]:    ['tips', 'variations'],
+  [SectionTypes.STEPS]:    ['directions', 'instructions', 'preparation', 'procedure', 'procedures'],
 };
 
 const Substitutions = {
   BASED_ON:       `{{__${SectionTypes.BASED_ON}__}}`,
+  HEADER:         `{{__${SectionTypes.HEADER}__}}`,
   HELP:           `{{__${SectionTypes.HELP}__}}`,
   HERO_IMG:       `{{__${SectionTypes.HERO_IMG}__}}`,
   INFO:           `{{__${SectionTypes.INFO}__}}`,
@@ -76,7 +79,9 @@ function getSectionType(section) {
     return type;
   }
 
-  const aliasType = Object.keys(SectionAliases).find(key => SectionAliases[key].includes(type));
+  const aliasType = Object.keys(SectionAliases)
+    .find(key => SectionAliases[key].includes(type));
+
   return aliasType || type;
 }
 
@@ -103,7 +108,6 @@ function getImageType(imagesPath, name) {
   return null;
 }
 
-// create-recipe.js:
 /*
   // link icon svg code
   // via: https://fontawesome.com/icons/external-link-alt
@@ -112,8 +116,13 @@ function getImageType(imagesPath, name) {
   linkIcon += '</svg>';
   */
 
-function prettyBasedOnSection(section) {
+// eslint-disable-next-line no-unused-vars
+function prettyBasedOnSection(section, shortenURLs) {
+  // opt: remove cruft from 'based on' links
   /*
+  if (shortenURLs) {
+  }
+
   if (shortenURLs) {
     $('#basedon a').each(function () {
       let url = $(this).text();
@@ -151,23 +160,18 @@ function getHelpSection(helpURLs, name) {
 `;
 }
 
-function writeRecipe(recipeTemplate, converter, config, path, name) {
-  const { outputPath, imagesPath, autoUrlSections, titleSuffix, includeHelpLinks, shortenURLs, helpURLs, lookForHeroImage } = config;
+function convertRecipe(recipeTemplate, converter, config, path, name) {
+  const { imagesPath, autoUrlSections, titleSuffix, includeHelpLinks, shortenURLs, helpURLs, lookForHeroImage } = config;
   const markdown = readFileSync(path, { encoding: 'utf8' });
   const recipe = converter.makeHtml(markdown);
   const sections = recipe.split(RegExes.SECTION_SPLIT);
 
   let htmlOutput = recipeTemplate;
-  const m = recipe.match(RegExes.TITLE);
-  const recipeName = m ? m[1] : name;
-  htmlOutput = htmlOutput
-    .replace(RegExes.PAGE_TITLE, `<title>${recipeName}${titleSuffix || ''}</title>`)
-    .replace(Substitutions.TITLE, recipeName);
 
   // if there's a hero image available, load and display
   const heroExt = lookForHeroImage && getImageType(imagesPath, name);
   if (heroExt) {
-    htmlOutput = htmlOutput.replace(Substitutions.HERO_IMG, `<img class=${Styles.HERO_IMG} src="../images/${name}.${heroExt}">`);
+    htmlOutput = htmlOutput.replace(Substitutions.HERO_IMG, `<img class=${Styles.HERO_IMG} src="images/${name}.${heroExt}">`);
   }
 
   // add some helper links
@@ -177,8 +181,10 @@ function writeRecipe(recipeTemplate, converter, config, path, name) {
 
   // iterate sections, add to body
   sections.forEach((section) => {
-    const sectionType = getSectionType(section);
-    // const sectionName  = matches[2];
+    const sectionType = RegExes.TITLE.test(section)
+      ? SectionTypes.HEADER
+      : getSectionType(section);
+
     if (autoUrlSections.includes(sectionType)) {
       section = linkify(section);
     }
@@ -186,19 +192,26 @@ function writeRecipe(recipeTemplate, converter, config, path, name) {
     // a few more bits to nicen things up...
     switch (sectionType) {
       case SectionTypes.BASED_ON:
-        // opt: remove cruft from 'based on' links
-        if (shortenURLs) {
-          section = prettyBasedOnSection(section);
+        section = prettyBasedOnSection(section, shortenURLs);
+        break;
+      case SectionTypes.HEADER:
+        {
+          const [, recipeName] = section.match(RegExes.TITLE);
+          section = section.replace(RegExes.TITLE, '');
+
+          htmlOutput = htmlOutput
+            .replace(RegExes.PAGE_TITLE, `<title>${recipeName}${titleSuffix || ''}</title>`)
+            .replace(Substitutions.TITLE, recipeName);
         }
+        break;
+      case SectionTypes.INFO:
+        // in info, add labels to time/quantity
+        section = prettyInfoSection(section);
         break;
       case SectionTypes.INGREDIENTS:
         // in the ingredients, make things in parentheses a
         // bit lighter
         section = prettyIngredientsSection(section);
-        break;
-      case SectionTypes.INFO:
-        // in info, add labels to time/quantity
-        section = prettyInfoSection(section);
         break;
     }
 
@@ -207,14 +220,17 @@ function writeRecipe(recipeTemplate, converter, config, path, name) {
 
   // clean-up unused sections
   Object.keys(Substitutions).forEach(word => htmlOutput = htmlOutput.replace(Substitutions[word], ''));
-
-  writeFile(resolve(outputPath, `${name}.html`), htmlOutput, { encoding: 'utf8'}, () => null);
+  return htmlOutput;
 }
 
 function buildRecipes(recipeTemplate, options, fileList) {
+  const { outputPath } = options;
+
   const converter = new showdown.Converter();
+
   fileList.forEach(({ file: path, name }) => {
-    writeRecipe(recipeTemplate, converter, options, path, name);
+    const html = convertRecipe(recipeTemplate, converter, options, path, name);
+    writeFile(resolve(outputPath, `${name}.html`), html, { encoding: 'utf8'}, () => null);
   });
 
 }
