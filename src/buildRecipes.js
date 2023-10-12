@@ -1,5 +1,5 @@
 const { resolve } = require('path');
-const { accessSync, constants: { F_OK }, readFileSync, writeFile } = require('fs');
+const { accessSync, constants: { F_OK }, readFile, writeFile } = require('fs');
 const showdown  = require('showdown');
 const { linkify } = require('./utils');
 
@@ -226,12 +226,17 @@ function buildRecipes(recipeTemplate, options, fileList) {
   const converter = new showdown.Converter();
 
   fileList.forEach(({ file: path, name }) => {
-    const markdown = readFileSync(path, { encoding: 'utf8' });
-    let html = converter.makeHtml(markdown);
-    html = convertRecipe(recipeTemplate, html, options, name);
-    writeFile(resolve(outputPath, `${name}.html`), html, { encoding: 'utf8'}, () => null);
+    readFile(path, { encoding: 'utf8' }, (err, markdown) => {
+      if (err) {
+        // eslint-disable-next-line no-console
+        console.error(err);
+        return;
+      }
+      let html = converter.makeHtml(markdown);
+      html = convertRecipe(recipeTemplate, html, options, name);
+      writeFile(resolve(outputPath, `${name}.html`), html, { encoding: 'utf8'}, () => null);
+    });
   });
-
 }
 
 module.exports = {
