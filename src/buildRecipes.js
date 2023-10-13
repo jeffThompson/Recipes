@@ -14,7 +14,7 @@ const SectionTypes = {
 };
 
 const SectionAliases = {
-  [SectionTypes.BASED_ON]: ['resources'],
+  [SectionTypes.BASED_ON]: ['credits', 'resources'],
   [SectionTypes.NOTES]:    ['tips', 'variations'],
   [SectionTypes.STEPS]:    ['directions', 'instructions', 'preparation', 'procedure', 'procedures'],
 };
