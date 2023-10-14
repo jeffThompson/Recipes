@@ -1,7 +1,7 @@
 const { resolve } = require('path');
 const { accessSync, constants: { F_OK }, readFile, writeFile } = require('fs');
 const showdown  = require('showdown');
-const { linkify } = require('./utils');
+const { linkify, shorten } = require('./utils');
 
 /* eslint-disable key-spacing */
 const SectionTypes = {
@@ -51,6 +51,7 @@ const RegExes = {
   LI:            /<li>(.|\n)+?<\/li>/gm,
 
   PAGE_TITLE:    /<title>.*?<\/title>/,
+  ANCHORS_SHORT: /<a [^>]*?href="[^"]{10,}"[^>]*?>[^<]{10,}<\/a>/g,
 
   PARENS:        /\(([^)]+)\)/g,
   /**
@@ -119,19 +120,9 @@ function getImageType(imagesPath, name) {
 // eslint-disable-next-line no-unused-vars
 function prettyBasedOnSection(section, shortenURLs) {
   // opt: remove cruft from 'based on' links
-  /*
-  if (shortenURLs) {
-  }
-
-  if (shortenURLs) {
-    $('#basedon a').each(function () {
-      let url = $(this).text();
-      url = siteDomain;
-      $(this).text(url);
-    });
-  }
-   */
-  return section;
+  return shortenURLs
+    ? section.replace(RegExes.ANCHORS_SHORT, anchor => shorten(anchor))
+    : section;
 }
 
 function prettyInfoSection(section) {

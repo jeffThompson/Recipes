@@ -62,7 +62,7 @@ module.exports = {
    * @example
    * const url = 'https://www.seriouseats.com/recipes/2012/01/aloo-matar.html'
    * // would become:
-   * // https://www.seriouseats.com
+   * // www.seriouseats.com
    */
   shortenURLs: false,
 
