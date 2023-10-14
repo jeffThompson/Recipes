@@ -66,4 +66,5 @@ module.exports = {
    */
   shortenURLs: false,
 
+  favicon: 'http://www.jeffreythompson.org/graphics/favicon.png',
 };

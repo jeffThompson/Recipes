@@ -4,22 +4,22 @@ const showdown  = require('showdown');
 const { linkify, shorten } = require('./utils');
 
 /* eslint-disable key-spacing */
-const SectionTypes = {
+const SectionTypes = Object.freeze({
   BASED_ON:       'basedon',
   HEADER:         'header',
   INFO:           'info',
   INGREDIENTS:    'ingredients',
   NOTES:          'notes',
   STEPS:          'steps',
-};
+});
 
-const SectionAliases = {
+const SectionAliases = Object.freeze({
   [SectionTypes.BASED_ON]: ['credits', 'resources'],
   [SectionTypes.NOTES]:    ['tips', 'variations'],
   [SectionTypes.STEPS]:    ['directions', 'instructions', 'preparation', 'procedure', 'procedures'],
-};
+});
 
-const Substitutions = {
+const Substitutions = Object.freeze({
   BASED_ON:       `{{__${SectionTypes.BASED_ON}__}}`,
   HEADER:         `{{__${SectionTypes.HEADER}__}}`,
   INFO:           `{{__${SectionTypes.INFO}__}}`,
@@ -31,9 +31,13 @@ const Substitutions = {
   HELP:           '{{__help__}}',
   HERO_IMG:       '{{__heroImg__}}',
   TITLE:          '{{__title__}}',
-};
+  // Head's meta-tags
+  META_FAVICON:   '{{__favIcon__}}',
+  META_DATE:      '{{__metaDateGenerated__}}',
+  META_OG_IMG:    '{{__metaOGImage__}}',
+});
 
-const Styles = {
+const Styles = Object.freeze({
   HELP_LINK:      'help-link',
   HERO_IMG:       'hero-img',
   PAREN:          'paren',
@@ -41,9 +45,9 @@ const Styles = {
   HAS_NUMERIC:    'ingredient--align',
   NUMERIC:        'ingredient--amt',
   UNITS:          'ingredient--text',
-};
+});
 
-const RegExes = {
+const RegExes = Object.freeze({
   SECTION_SPLIT: /(?=<h[12])/,
 
   TITLE:         /<h1(?:\s+id=".*?")?>(.*?)<\/h1>/i,
@@ -64,10 +68,19 @@ const RegExes = {
    * "1.5 oz gin"
    */
   NUMERIC:       /<li>(~?[\d½⅓⅔¼¾⅕⅖⅗⅘⅙⅚⅐⅛⅜⅝⅞/ ."–-]+(?:(?:to|-) \d+)?)\s+(.*)<\/li>/
-};
+});
 /* eslint-enable key-spacing */
 
 const LINK_SUB_NAME = '<name>';
+
+function setHeadMeta(documentHtml, { favicon, ogImgURL, recipeName, titleSuffix }) {
+  return documentHtml
+    .replace(RegExes.PAGE_TITLE, `<title>${recipeName}${titleSuffix || ''}</title>`)
+    .replace(Substitutions.META_DATE, `<meta name="date" content="${new Date()}">`)
+    .replace(Substitutions.META_OG_IMG, ogImgURL ? `<meta property="og:image" content="${ogImgURL}">` : '')
+    .replace(Substitutions.META_FAVICON, favicon ? `<link rel="icon" type="image/png" href="${favicon}">` : '')
+    .replace(Substitutions.TITLE, recipeName);
+}
 
 function getSectionType(section) {
   const matches = section.match(RegExes.H2);
@@ -152,7 +165,10 @@ function getHelpSection(helpURLs, name) {
 }
 
 function convertRecipe(outputHTML, recipeHTML, config, name) {
-  const { imagesPath, autoUrlSections, titleSuffix, includeHelpLinks, shortenURLs, helpURLs, lookForHeroImage } = config;
+  const {
+    autoUrlSections, favicon, helpURLs, imagesPath, includeHelpLinks, lookForHeroImage, shortenURLs, titleSuffix,
+  } = config;
+  let recipeName = '';
 
   // iterate sections, add to body
   recipeHTML
@@ -172,22 +188,16 @@ function convertRecipe(outputHTML, recipeHTML, config, name) {
           section = prettyBasedOnSection(section, shortenURLs);
           break;
         case SectionTypes.HEADER:
-          {
-            const [, recipeName] = section.match(RegExes.TITLE);
-            section = section.replace(RegExes.TITLE, '');
-
-            outputHTML = outputHTML
-              .replace(RegExes.PAGE_TITLE, `<title>${recipeName}${titleSuffix || ''}</title>`)
-              .replace(Substitutions.TITLE, recipeName);
-          }
+          recipeName = section.match(RegExes.TITLE)[1];
+          section = section.replace(RegExes.TITLE, '');
           break;
         case SectionTypes.INFO:
-        // in info, add labels to time/quantity
+          // in info, add labels to time/quantity
           section = prettyInfoSection(section);
           break;
         case SectionTypes.INGREDIENTS:
-        // in the ingredients, make things in parentheses a
-        // bit lighter
+          // in the ingredients, make things in parentheses a
+          // bit lighter
           section = prettyIngredientsSection(section);
           break;
       }
@@ -195,16 +205,19 @@ function convertRecipe(outputHTML, recipeHTML, config, name) {
       outputHTML = outputHTML.replace(`{{__${sectionType}__}}`, section);
     });
 
-  // if there's a hero image available, load and display
-  const imgExtension = lookForHeroImage && getImageType(imagesPath, name);
-  if (imgExtension) {
-    outputHTML = outputHTML.replace(Substitutions.HERO_IMG, `<img class=${Styles.HERO_IMG} src="images/${name}.${imgExtension}">`);
-  }
-
   // add some helper links
   if (includeHelpLinks && Array.isArray(helpURLs) && helpURLs.length) {
     outputHTML = outputHTML.replace(Substitutions.HELP, getHelpSection(helpURLs, name));
   }
+
+  // if there's a hero image available, load and display
+  const imgExtension = lookForHeroImage && getImageType(imagesPath, name);
+  const heroImgURL = imgExtension ? `images/${name}.${imgExtension}` : '';
+  if (heroImgURL) {
+    outputHTML = outputHTML.replace(Substitutions.HERO_IMG, `<img class=${Styles.HERO_IMG} src="${heroImgURL}">`);
+  }
+
+  outputHTML = setHeadMeta(outputHTML, { favicon, ogImgURL: heroImgURL, recipeName, titleSuffix });
 
   // clean-up unused sections
   Object.keys(Substitutions).forEach(word => outputHTML = outputHTML.replace(Substitutions[word], ''));
