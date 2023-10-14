@@ -1,4 +1,4 @@
-const { linkify } = require('../utils');
+const { linkify, shorten } = require('../utils');
 
 describe('buildRecipes', () => {
   describe('linkify', () => {
@@ -30,4 +30,31 @@ describe('buildRecipes', () => {
       expect(result).toBe(expectedResult);
     });
   });
+
+  describe('shorten', () => {
+    it('should shorten anchors with URLs as text (Happy Path)', () => {
+      const tests = [{
+        value: '<a href="https://cooking.nytimes.com/recipes/bbq-sauce">https://cooking.nytimes.com/recipes/1013116-simple-barbecue-sauce</a>',
+        expectedResult: '<a href="https://cooking.nytimes.com/recipes/bbq-sauce">cooking.nytimes.com</a>',
+      }, {
+        value: '<a href="https://cooking.nytimes.com/recipes/bbq-sauce">http://cooking.edu/recipes/1013116</a>',
+        expectedResult: '<a href="https://cooking.nytimes.com/recipes/bbq-sauce">cooking.edu</a>',
+      }, {
+        value: '<a href="https://cooking.nytimes.com/recipes/bbq-sauce">cooking.co.uk/recipes</a>',
+        expectedResult: '<a href="https://cooking.nytimes.com/recipes/bbq-sauce">cooking.co.uk/recipes</a>',
+      }, {
+        value: '<a href="https://cooking.nytimes.com/recipes/bbq-sauce">Banana Splits</a>',
+        expectedResult: '<a href="https://cooking.nytimes.com/recipes/bbq-sauce">Banana Splits</a>',
+      }, {
+        value: '<a href="https://cooking.nytimes.com/recipes/bbq-sauce">https://Banana.Splits</span>',
+        expectedResult: '<a href="https://cooking.nytimes.com/recipes/bbq-sauce">https://Banana.Splits</span>',
+      }];
+
+      tests.forEach(({ value, expectedResult }) => {
+        const result = shorten(value);
+        expect(result).toBe(expectedResult);
+      });
+    });
+  });
+
 });
