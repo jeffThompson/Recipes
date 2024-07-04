@@ -3,6 +3,8 @@
 Serves 4 easily
 Total Time - 40 minutes
 
+![black-pepper-tofu-arj](/images/black-pepper-tofu.jpg)
+
 ## Ingredients
 
 ### Base
