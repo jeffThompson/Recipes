@@ -1,5 +1,8 @@
 # Black Pepper Tofu - New and Improved
 
+Serves 4 easily
+Total Time - 40 minutes
+
 ## Ingredients
 
 ### Base
@@ -50,3 +53,5 @@
 ### Finishing Touch (Started by merging Branch A into Branch B)
 - **E1** Chop and add green onions to kadahi; turn off heat in 1 min.
 - **E2 (Optional)** Sprinkle white sesame seeds for garnish.
+
+Serve with Hot Rice
