@@ -7,17 +7,17 @@ Total Time - 40 minutes
 
 ### Base
 - 1 block extra firm tofu
-- 1 onion
-- Few shallots
+- 1 big or 2 medium onions (increase if you want more gravy)
+- Few shallots (may substitute with just another onion)
 - Green onion
 
 ### Coating for Tofu
 - 1/2 tsp salt
 - 1/2 tsp red chili powder
 - 1 packet Maggi magic masala
-- 2 tbsp maple syrup
+- 2 tbsp maple syrup (may use powdered sugar or honey)
 - 2 tbsp soy sauce
-- Fry seasoning for coating
+- Fry seasoning for coating (or just corn starch or bread crumbs)
 
 ### Sauce
 - 6 tsp black pepper balls
